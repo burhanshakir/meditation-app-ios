@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF349F7121518B4B002CABF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF349F7021518B4B002CABF1 /* AppDelegate.swift */; };
-		DF349F7321518B4B002CABF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF349F7221518B4B002CABF1 /* ViewController.swift */; };
+		DF349F7321518B4B002CABF1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF349F7221518B4B002CABF1 /* TabBarController.swift */; };
 		DF349F7621518B4B002CABF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7421518B4B002CABF1 /* Main.storyboard */; };
 		DF349F7821518B4C002CABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7721518B4C002CABF1 /* Assets.xcassets */; };
 		DF349F7B21518B4C002CABF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7921518B4C002CABF1 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		DF349F6D21518B4B002CABF1 /* Meditation App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meditation App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF349F7021518B4B002CABF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF349F7221518B4B002CABF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF349F7221518B4B002CABF1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DF349F7521518B4B002CABF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF349F7721518B4C002CABF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF349F7A21518B4C002CABF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,38 @@
 		DF349F6F21518B4B002CABF1 /* Meditation App */ = {
 			isa = PBXGroup;
 			children = (
+				DF3C346D2154F748005A3BEC /* View */,
+				DF3C346C2154F647005A3BEC /* Controllers */,
+				DF3C346A2154F623005A3BEC /* Model */,
 				DF349F7021518B4B002CABF1 /* AppDelegate.swift */,
-				DF349F7221518B4B002CABF1 /* ViewController.swift */,
 				DF349F7421518B4B002CABF1 /* Main.storyboard */,
 				DF349F7721518B4C002CABF1 /* Assets.xcassets */,
 				DF349F7921518B4C002CABF1 /* LaunchScreen.storyboard */,
 				DF349F7C21518B4C002CABF1 /* Info.plist */,
 			);
 			path = "Meditation App";
+			sourceTree = "<group>";
+		};
+		DF3C346A2154F623005A3BEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF3C346C2154F647005A3BEC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF349F7221518B4B002CABF1 /* TabBarController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DF3C346D2154F748005A3BEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF349F7321518B4B002CABF1 /* ViewController.swift in Sources */,
+				DF349F7321518B4B002CABF1 /* TabBarController.swift in Sources */,
 				DF349F7121518B4B002CABF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
