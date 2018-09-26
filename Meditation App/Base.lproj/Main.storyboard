@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,28 +14,87 @@
         <!--Meditations-->
         <scene sceneID="96l-b4-gB7">
             <objects>
-                <viewController id="IvX-UB-l4N" sceneMemberID="viewController">
+                <viewController id="IvX-UB-l4N" customClass="MeditationVC" customModule="Meditation_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0en-f2-ffM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9R3-yg-dNA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OsU-MN-Bf5">
-                                    <size key="itemSize" width="211" height="250"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ko3-DZ-UN9">
+                                <rect key="frame" x="0.0" y="40" width="375" height="578"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vc3-OU-jWp">
+                                    <size key="itemSize" width="181" height="285"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MeditationCell" id="PlV-kY-lHw" customClass="MeditationCell" customModule="Meditation_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="181" height="285"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="181" height="285"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic-chakra" translatesAutoresizingMaskIntoConstraints="NO" id="9eB-3F-2cu">
+                                                    <rect key="frame" x="38" y="20" width="105" height="105"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="105" id="nPk-yv-m7i"/>
+                                                        <constraint firstAttribute="height" constant="105" id="sV8-BL-FHJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic Chakra Cuning" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GR9-6i-sgG">
+                                                    <rect key="frame" x="5" y="140" width="171" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="jbB-Fs-iXb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xj-YB-HJG">
+                                                    <rect key="frame" x="11" y="232" width="159" height="42"/>
+                                                    <color key="backgroundColor" red="0.17254901960784313" green="0.63137254901960782" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                    <state key="normal" title="START">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="9eB-3F-2cu" firstAttribute="top" secondItem="PlV-kY-lHw" secondAttribute="topMargin" constant="12" id="0gx-Hh-Tw8"/>
+                                            <constraint firstItem="GR9-6i-sgG" firstAttribute="leading" secondItem="PlV-kY-lHw" secondAttribute="leading" constant="5" id="AhX-pT-yZr"/>
+                                            <constraint firstAttribute="trailing" secondItem="GR9-6i-sgG" secondAttribute="trailing" constant="5" id="DBa-fK-QeE"/>
+                                            <constraint firstItem="9eB-3F-2cu" firstAttribute="centerX" secondItem="PlV-kY-lHw" secondAttribute="centerX" id="HPJ-7Q-dJI"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="7xj-YB-HJG" secondAttribute="bottom" constant="3" id="Mra-Td-xYK"/>
+                                            <constraint firstItem="7xj-YB-HJG" firstAttribute="leading" secondItem="PlV-kY-lHw" secondAttribute="leadingMargin" constant="3" id="WhP-pA-0Ad"/>
+                                            <constraint firstItem="7xj-YB-HJG" firstAttribute="top" secondItem="GR9-6i-sgG" secondAttribute="bottom" constant="12" id="bU4-7M-IMh"/>
+                                            <constraint firstItem="GR9-6i-sgG" firstAttribute="top" secondItem="9eB-3F-2cu" secondAttribute="bottom" constant="15" id="qzy-UD-VkM"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="7xj-YB-HJG" secondAttribute="trailing" constant="3" id="sUp-73-GRu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="meditationImage" destination="9eB-3F-2cu" id="lcf-go-Inu"/>
+                                            <outlet property="title" destination="GR9-6i-sgG" id="IpH-Yz-cdb"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ko3-DZ-UN9" firstAttribute="leading" secondItem="yRl-5E-WhG" secondAttribute="leading" id="1f1-lU-5ju"/>
+                            <constraint firstItem="ko3-DZ-UN9" firstAttribute="top" secondItem="yRl-5E-WhG" secondAttribute="top" constant="20" id="4Bs-Yw-IbK"/>
+                            <constraint firstItem="ko3-DZ-UN9" firstAttribute="trailing" secondItem="yRl-5E-WhG" secondAttribute="trailing" id="Iha-lg-vZC"/>
+                            <constraint firstItem="ko3-DZ-UN9" firstAttribute="bottom" secondItem="yRl-5E-WhG" secondAttribute="bottom" id="yTR-OH-2FZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yRl-5E-WhG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Meditations" image="002-meditation" id="FHU-2l-mRl"/>
+                    <connections>
+                        <outlet property="mediationCollectionView" destination="ko3-DZ-UN9" id="nFz-mn-TLj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSS-fw-T8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,7 +105,7 @@
             <objects>
                 <viewController id="ZHI-bB-cF0" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bx1-TI-dhd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nUX-We-sfC"/>
@@ -61,7 +121,7 @@
             <objects>
                 <viewController id="EON-dI-AsB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Orh-QA-oVb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dSR-Ra-bbp"/>
@@ -77,7 +137,7 @@
             <objects>
                 <viewController id="jnI-fq-dXr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WNm-nm-kew">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BvI-By-gzJ"/>
@@ -92,10 +152,11 @@
         <scene sceneID="4Zd-p6-VaA">
             <objects>
                 <tabBarController id="8yi-db-htP" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dYT-aE-m80">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dYT-aE-m80">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.14509803921568626" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="jnI-fq-dXr" kind="relationship" relationship="viewControllers" id="cbh-Jw-bem"/>
@@ -114,5 +175,6 @@
         <image name="002-meditation" width="21" height="21"/>
         <image name="003-settings" width="21" height="21"/>
         <image name="004-instructions" width="21" height="21"/>
+        <image name="basic-chakra" width="61" height="61"/>
     </resources>
 </document>

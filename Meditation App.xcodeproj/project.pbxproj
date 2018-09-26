@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF198897215B519B00DD7E3D /* MeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF198896215B519B00DD7E3D /* MeditationVC.swift */; };
+		DF198899215B525100DD7E3D /* MeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF198898215B525100DD7E3D /* MeditationCell.swift */; };
+		DF19889C215B531F00DD7E3D /* Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19889B215B531F00DD7E3D /* Meditation.swift */; };
+		DF1988A1215B539700DD7E3D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1988A0215B539700DD7E3D /* DataService.swift */; };
 		DF349F7121518B4B002CABF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF349F7021518B4B002CABF1 /* AppDelegate.swift */; };
 		DF349F7321518B4B002CABF1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF349F7221518B4B002CABF1 /* TabBarController.swift */; };
 		DF349F7621518B4B002CABF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7421518B4B002CABF1 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF198896215B519B00DD7E3D /* MeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationVC.swift; sourceTree = "<group>"; };
+		DF198898215B525100DD7E3D /* MeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationCell.swift; sourceTree = "<group>"; };
+		DF19889B215B531F00DD7E3D /* Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meditation.swift; sourceTree = "<group>"; };
+		DF1988A0215B539700DD7E3D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DF349F6D21518B4B002CABF1 /* Meditation App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meditation App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF349F7021518B4B002CABF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF349F7221518B4B002CABF1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF19889F215B538700DD7E3D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DF1988A0215B539700DD7E3D /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DF349F6421518B4B002CABF1 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +70,7 @@
 		DF349F6F21518B4B002CABF1 /* Meditation App */ = {
 			isa = PBXGroup;
 			children = (
+				DF19889F215B538700DD7E3D /* Services */,
 				DF3C346D2154F748005A3BEC /* View */,
 				DF3C346C2154F647005A3BEC /* Controllers */,
 				DF3C346A2154F623005A3BEC /* Model */,
@@ -69,6 +86,7 @@
 		DF3C346A2154F623005A3BEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF19889B215B531F00DD7E3D /* Meditation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -77,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				DF349F7221518B4B002CABF1 /* TabBarController.swift */,
+				DF198896215B519B00DD7E3D /* MeditationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -84,6 +103,7 @@
 		DF3C346D2154F748005A3BEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF198898215B525100DD7E3D /* MeditationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,7 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF19889C215B531F00DD7E3D /* Meditation.swift in Sources */,
+				DF198897215B519B00DD7E3D /* MeditationVC.swift in Sources */,
 				DF349F7321518B4B002CABF1 /* TabBarController.swift in Sources */,
+				DF1988A1215B539700DD7E3D /* DataService.swift in Sources */,
+				DF198899215B525100DD7E3D /* MeditationCell.swift in Sources */,
 				DF349F7121518B4B002CABF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
