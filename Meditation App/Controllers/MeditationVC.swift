@@ -28,6 +28,11 @@ class MeditationVC: UIViewController, UICollectionViewDelegate, UICollectionView
         
     }
     
+    // Changing status bar color to white
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
