@@ -17,6 +17,9 @@
 		DF349F7621518B4B002CABF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7421518B4B002CABF1 /* Main.storyboard */; };
 		DF349F7821518B4C002CABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7721518B4C002CABF1 /* Assets.xcassets */; };
 		DF349F7B21518B4C002CABF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7921518B4C002CABF1 /* LaunchScreen.storyboard */; };
+		DFDA8CC7215D2424009CA6BE /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */; };
+		DFDA8CC9215D345A009CA6BE /* InstructionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA8CC8215D345A009CA6BE /* InstructionsCell.swift */; };
+		DFDA8CCB215D351C009CA6BE /* MeditationInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA8CCA215D351C009CA6BE /* MeditationInstructions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		DF349F7721518B4C002CABF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF349F7A21518B4C002CABF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF349F7C21518B4C002CABF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
+		DFDA8CC8215D345A009CA6BE /* InstructionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCell.swift; sourceTree = "<group>"; };
+		DFDA8CCA215D351C009CA6BE /* MeditationInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationInstructions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				DF19889B215B531F00DD7E3D /* Meditation.swift */,
+				DFDA8CCA215D351C009CA6BE /* MeditationInstructions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 				DF349F7221518B4B002CABF1 /* TabBarController.swift */,
 				DF198896215B519B00DD7E3D /* MeditationVC.swift */,
 				DF1988A2215CC47A00DD7E3D /* HomeVC.swift */,
+				DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				DF198898215B525100DD7E3D /* MeditationCell.swift */,
+				DFDA8CC8215D345A009CA6BE /* InstructionsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,10 +193,13 @@
 			files = (
 				DF19889C215B531F00DD7E3D /* Meditation.swift in Sources */,
 				DF1988A3215CC47A00DD7E3D /* HomeVC.swift in Sources */,
+				DFDA8CCB215D351C009CA6BE /* MeditationInstructions.swift in Sources */,
 				DF198897215B519B00DD7E3D /* MeditationVC.swift in Sources */,
 				DF349F7321518B4B002CABF1 /* TabBarController.swift in Sources */,
 				DF1988A1215B539700DD7E3D /* DataService.swift in Sources */,
+				DFDA8CC7215D2424009CA6BE /* InstructionsVC.swift in Sources */,
 				DF198899215B525100DD7E3D /* MeditationCell.swift in Sources */,
+				DFDA8CC9215D345A009CA6BE /* InstructionsCell.swift in Sources */,
 				DF349F7121518B4B002CABF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
