@@ -179,6 +179,9 @@
                                                     <state key="normal" title="VIEW">
                                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="viewButtonClicked:" destination="unX-xw-f1Y" eventType="touchUpInside" id="OPy-ya-QfU"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -217,11 +220,69 @@
                     <tabBarItem key="tabBarItem" title="Instructions" image="004-instructions" id="nvM-RZ-XFy"/>
                     <connections>
                         <outlet property="instructionsTable" destination="wyj-J0-6vu" id="qrB-qJ-fQH"/>
+                        <segue destination="mDX-Jj-vYL" kind="show" identifier="MeditationInstructionVC" id="umf-1n-6bF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bj0-cm-31K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="685.60000000000002" y="116.49175412293854"/>
+        </scene>
+        <!--Meditation InstructionVC-->
+        <scene sceneID="FLh-nh-SQw">
+            <objects>
+                <viewController id="mDX-Jj-vYL" customClass="MeditationInstructionVC" customModule="Meditation_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qpx-LX-5Ar">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Mk-VB-kdJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chakra Cuning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR1-1T-Cpz">
+                                        <rect key="frame" x="15" y="40" width="158" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zE-Gm-nID">
+                                        <rect key="frame" x="15" y="87" width="375" height="26"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.12549019610000001" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9zE-Gm-nID" firstAttribute="top" secondItem="7Mk-VB-kdJ" secondAttribute="top" constant="87" id="CnA-hE-OXx"/>
+                                    <constraint firstItem="9zE-Gm-nID" firstAttribute="leading" secondItem="7Mk-VB-kdJ" secondAttribute="leading" constant="15" id="GRE-cm-AV9"/>
+                                    <constraint firstItem="9zE-Gm-nID" firstAttribute="width" secondItem="7Mk-VB-kdJ" secondAttribute="width" id="PPR-mM-GIy"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eR1-1T-Cpz" secondAttribute="trailing" id="QUz-s4-ffC"/>
+                                    <constraint firstAttribute="bottom" secondItem="9zE-Gm-nID" secondAttribute="bottom" constant="559.5" placeholder="YES" id="eF8-Si-kPY"/>
+                                    <constraint firstItem="eR1-1T-Cpz" firstAttribute="top" secondItem="7Mk-VB-kdJ" secondAttribute="top" constant="40" id="mJ4-uj-6Ru"/>
+                                    <constraint firstAttribute="trailing" secondItem="9zE-Gm-nID" secondAttribute="trailing" id="ocg-R4-Ot7"/>
+                                    <constraint firstItem="eR1-1T-Cpz" firstAttribute="leading" secondItem="7Mk-VB-kdJ" secondAttribute="leading" constant="15" id="sLg-3W-uq9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kqH-cz-pvF" firstAttribute="top" secondItem="7Mk-VB-kdJ" secondAttribute="top" constant="20" id="4Tu-mp-8W5"/>
+                            <constraint firstItem="7Mk-VB-kdJ" firstAttribute="height" secondItem="Qpx-LX-5Ar" secondAttribute="height" id="7xc-uo-gQU"/>
+                            <constraint firstItem="7Mk-VB-kdJ" firstAttribute="leading" secondItem="kqH-cz-pvF" secondAttribute="leading" id="e7g-ns-rni"/>
+                            <constraint firstItem="kqH-cz-pvF" firstAttribute="bottom" secondItem="7Mk-VB-kdJ" secondAttribute="bottom" id="hPY-um-bZX"/>
+                            <constraint firstItem="7Mk-VB-kdJ" firstAttribute="width" secondItem="Qpx-LX-5Ar" secondAttribute="width" id="pRs-Fg-A9W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kqH-cz-pvF"/>
+                    </view>
+                    <connections>
+                        <outlet property="meditationInstructions" destination="9zE-Gm-nID" id="pyM-B8-FFg"/>
+                        <outlet property="meditationName" destination="eR1-1T-Cpz" id="R7s-3f-Ts1"/>
+                        <outlet property="scrollView" destination="7Mk-VB-kdJ" id="5hI-eF-ayU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8GT-ye-fZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608.8" y="115.59220389805098"/>
         </scene>
         <!--Home-->
         <scene sceneID="0zZ-2r-v4T">

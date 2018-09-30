@@ -66,10 +66,24 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             let instruction = instructions[indexPath.section]
             instructionsCell.updateViews(instructions: instruction)
             
+            //Onclick of view button a segue is performed
+            instructionsCell.onViewButtonTapped = {
+                self.performSegue(withIdentifier: "MeditationInstructionVC", sender: instruction)
+            }
+            
             return instructionsCell
             
         }
         return InstructionsCell()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let instructionVC = segue.destination as? MeditationInstructionVC
+        {
+            assert(sender as? MeditationInstructions != nil)
+            instructionVC.meditation = sender as! MeditationInstructions
+            
+        }
     }
 
 
