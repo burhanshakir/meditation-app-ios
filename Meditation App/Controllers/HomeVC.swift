@@ -16,9 +16,9 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    // Changing status bar color to white
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
+//    // Changing status bar color to white
+//    override var preferredStatusBarStyle: UIStatusBarStyle{
+//        return .lightContent
+//    }
 
 }
