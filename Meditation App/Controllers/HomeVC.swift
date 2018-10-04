@@ -8,17 +8,40 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var latestMediationCollectionView : UICollectionView!
+    
+    private var latestMeditations = [Meditation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        latestMeditations = DataService.instance.getLatestMeditation()
+        
+        latestMediationCollectionView.delegate = self
+        latestMediationCollectionView.dataSource = self
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return latestMeditations.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let meditationCell = latestMediationCollectionView.dequeueReusableCell(withReuseIdentifier: "RecentMeditationCell", for: indexPath) as? LatestMeditationCell
+        {
+            let meditation = latestMeditations[indexPath.row]
+            meditationCell.updateViews(meditation: meditation)
+            
+            return meditationCell
+            
+        }
+        
+        return LatestMeditationCell()
 
-//    // Changing status bar color to white
-//    override var preferredStatusBarStyle: UIStatusBarStyle{
-//        return .lightContent
-//    }
+    }
+    
+    
 
 }

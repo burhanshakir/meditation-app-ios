@@ -47,4 +47,28 @@ class DataService
         return instructions
     }
     
+    
+    // Returns only 3 meditation types : Basic Chakra, Source Code, G Space
+    func getBasicMeditations() -> [Meditation]
+    {
+        var basicMeditations = getMeditations()
+        
+        basicMeditations.remove(at: 1)
+        
+        return basicMeditations
+    }
+    
+    
+    func getLatestMeditation() -> [Meditation]
+    {
+        // TODO :- Check with local storage if any latest meditation was done
+        let isLatestMeditationListExist = false
+        
+        if(!isLatestMeditationListExist)
+        {
+            return getBasicMeditations()
+        }
+        
+    }
+    
 }
