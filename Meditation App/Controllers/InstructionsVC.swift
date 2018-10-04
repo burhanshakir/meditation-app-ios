@@ -95,7 +95,7 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let instructionVC = segue.destination as? MeditationInstructionVC
         {
             assert(sender as? MeditationInstructions != nil)
-            instructionVC.meditation = sender as! MeditationInstructions
+            instructionVC.meditation = sender as? MeditationInstructions
             
         }
     }
