@@ -53,7 +53,11 @@ class MeditationVC: UIViewController, UICollectionViewDelegate, UICollectionView
                 // Chakra cuning meditaion users are directed to different screen
                 if(meditation.title.contains("Chakra Cuning"))
                 {
-                    self.performSegue(withIdentifier: "DoMeditationVC", sender: meditation)
+                    self.performSegue(withIdentifier: "DoMeditationVC", sender: meditation.subMeditations[0])
+                }
+                else if (meditation.title.contains("Source Code"))
+                {
+                    self.performSegue(withIdentifier: "SubMeditationVC", sender: meditation)
                 }
                 
             }
@@ -72,6 +76,12 @@ class MeditationVC: UIViewController, UICollectionViewDelegate, UICollectionView
             assert(sender as? Meditation != nil)
             doMeditationVC.meditation = sender as? Meditation
             
+        }
+        
+        else if let subMeditationVC = segue.destination as? SubMeditationVC
+        {
+            assert(sender as? Meditation != nil)
+            subMeditationVC.meditation = sender as? Meditation
         }
     }
 

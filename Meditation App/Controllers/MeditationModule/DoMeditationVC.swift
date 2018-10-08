@@ -12,14 +12,16 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var meditationImage : UIImageView!
     
-    let meditationImageAsset : UIImage = UIImage(named:"base-10th")!
-    
     public var meditation : Meditation!
+    
+    var meditationImageAsset : UIImage! = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        meditationImageAsset = UIImage(named: meditation.imageName)!
         
         //Checks orientation and displays the correct image format
         checkForOrientation()

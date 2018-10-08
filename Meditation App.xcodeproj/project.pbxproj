@@ -19,6 +19,7 @@
 		DF349F7B21518B4C002CABF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7921518B4C002CABF1 /* LaunchScreen.storyboard */; };
 		DF4312AB2160E407002C202E /* MeditationInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */; };
 		DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */; };
+		DF66DE81216BE48400FD30E8 /* SubMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */; };
 		DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */; };
 		DFB46E78216A3F1000463259 /* DoMeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB46E77216A3F1000463259 /* DoMeditationVC.swift */; };
 		DFDA8CC7215D2424009CA6BE /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */; };
@@ -41,6 +42,7 @@
 		DF349F7C21518B4C002CABF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationInstructionVC.swift; sourceTree = "<group>"; };
 		DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationVC.swift; sourceTree = "<group>"; };
+		DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationCell.swift; sourceTree = "<group>"; };
 		DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMeditationCell.swift; sourceTree = "<group>"; };
 		DFB46E77216A3F1000463259 /* DoMeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoMeditationVC.swift; sourceTree = "<group>"; };
 		DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				DF198898215B525100DD7E3D /* MeditationCell.swift */,
 				DFDA8CC8215D345A009CA6BE /* InstructionsCell.swift */,
 				DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */,
+				DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				DF19889C215B531F00DD7E3D /* Meditation.swift in Sources */,
 				DF1988A3215CC47A00DD7E3D /* HomeVC.swift in Sources */,
 				DFDA8CCB215D351C009CA6BE /* MeditationInstructions.swift in Sources */,
+				DF66DE81216BE48400FD30E8 /* SubMeditationCell.swift in Sources */,
 				DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */,
 				DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */,
 				DF198897215B519B00DD7E3D /* MeditationVC.swift in Sources */,
