@@ -8,10 +8,13 @@
 
 import UIKit
 
-class DoMeditationVC: UIViewController {
+class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var meditationImage : UIImageView!
-    let meditationImageAsset : UIImage = UIImage(named:"heart-crown")!
+    
+    let meditationImageAsset : UIImage = UIImage(named:"base-10th")!
+    
+    public var meditation : Meditation!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,29 @@ class DoMeditationVC: UIViewController {
         //Checks orientation and displays the correct image format
         checkForOrientation()
         
+        // Add Gesture to dismiss image
+        addSwipeGesture()
+        
     }
+    
+    // MARK :- Gestures
+    
+    func addSwipeGesture(){
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(dismissScreen))
+        swipe.direction = .down
+        
+        self.view.addGestureRecognizer(swipe)
+    }
+    
+    @objc func dismissScreen(){
+        
+        self.navigationController?.popViewController(animated: false)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK :- Meditation Image Display
     
     // On Orientation Changed
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
@@ -31,6 +56,7 @@ class DoMeditationVC: UIViewController {
         
     }
     
+    //TODO :- Check User Preference and display image accordingly
     private func checkForOrientation()
     {
         if UIDevice.current.orientation.isLandscape
@@ -53,14 +79,19 @@ class DoMeditationVC: UIViewController {
         
         let result: UIImage = UIImage(cgImage: cgImageMeditation!, scale: 0.0, orientation: meditationImageAsset.imageOrientation)
         
-        self.meditationImage.image = result
-        self.meditationImage.contentMode = .scaleAspectFill
+        setImage(image: result)
 
     }
     
     private func displayImageInLandscape()
     {
-        self.meditationImage.image = meditationImageAsset
+        //Displaying image as is
+        setImage(image: meditationImageAsset)
+    }
+    
+    private func setImage(image : UIImage)
+    {
+        self.meditationImage.image = image
         self.meditationImage.contentMode = .scaleAspectFill
     }
 

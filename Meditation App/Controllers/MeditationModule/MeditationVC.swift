@@ -28,10 +28,10 @@ class MeditationVC: UIViewController, UICollectionViewDelegate, UICollectionView
         
     }
     
-//    // Changing status bar color to white
-//    override var preferredStatusBarStyle: UIStatusBarStyle{
-//        return .lightContent
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -47,11 +47,32 @@ class MeditationVC: UIViewController, UICollectionViewDelegate, UICollectionView
             let meditation = meditations[indexPath.row]
             meditationCell.updateViews(meditation: meditation)
             
+            //Onclick of view button a segue is performed
+            meditationCell.onStartButtonTapped = {
+                
+                // Chakra cuning meditaion users are directed to different screen
+                if(meditation.title.contains("Chakra Cuning"))
+                {
+                    self.performSegue(withIdentifier: "DoMeditationVC", sender: meditation)
+                }
+                
+            }
+            
             return meditationCell
             
         }
         
         return MeditationCell()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let doMeditationVC = segue.destination as? DoMeditationVC
+        {
+            assert(sender as? Meditation != nil)
+            doMeditationVC.meditation = sender as? Meditation
+            
+        }
     }
 
 }

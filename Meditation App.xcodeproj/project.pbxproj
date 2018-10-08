@@ -18,6 +18,7 @@
 		DF349F7821518B4C002CABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7721518B4C002CABF1 /* Assets.xcassets */; };
 		DF349F7B21518B4C002CABF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7921518B4C002CABF1 /* LaunchScreen.storyboard */; };
 		DF4312AB2160E407002C202E /* MeditationInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */; };
+		DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */; };
 		DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */; };
 		DFB46E78216A3F1000463259 /* DoMeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB46E77216A3F1000463259 /* DoMeditationVC.swift */; };
 		DFDA8CC7215D2424009CA6BE /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */; };
@@ -39,6 +40,7 @@
 		DF349F7A21518B4C002CABF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF349F7C21518B4C002CABF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationInstructionVC.swift; sourceTree = "<group>"; };
+		DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationVC.swift; sourceTree = "<group>"; };
 		DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMeditationCell.swift; sourceTree = "<group>"; };
 		DFB46E77216A3F1000463259 /* DoMeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoMeditationVC.swift; sourceTree = "<group>"; };
 		DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
@@ -109,12 +111,11 @@
 		DF3C346C2154F647005A3BEC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DF66DE7B216B2DC700FD30E8 /* SettingsModule */,
+				DF66DE7A216B2DBC00FD30E8 /* HomePageModule */,
+				DF66DE79216B2DB000FD30E8 /* InstructionModule */,
+				DF66DE78216B2D9E00FD30E8 /* MeditationModule */,
 				DF349F7221518B4B002CABF1 /* TabBarController.swift */,
-				DF198896215B519B00DD7E3D /* MeditationVC.swift */,
-				DF1988A2215CC47A00DD7E3D /* HomeVC.swift */,
-				DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */,
-				DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */,
-				DFB46E77216A3F1000463259 /* DoMeditationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +128,40 @@
 				DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DF66DE78216B2D9E00FD30E8 /* MeditationModule */ = {
+			isa = PBXGroup;
+			children = (
+				DF198896215B519B00DD7E3D /* MeditationVC.swift */,
+				DFB46E77216A3F1000463259 /* DoMeditationVC.swift */,
+				DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */,
+			);
+			path = MeditationModule;
+			sourceTree = "<group>";
+		};
+		DF66DE79216B2DB000FD30E8 /* InstructionModule */ = {
+			isa = PBXGroup;
+			children = (
+				DFDA8CC6215D2424009CA6BE /* InstructionsVC.swift */,
+				DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */,
+			);
+			path = InstructionModule;
+			sourceTree = "<group>";
+		};
+		DF66DE7A216B2DBC00FD30E8 /* HomePageModule */ = {
+			isa = PBXGroup;
+			children = (
+				DF1988A2215CC47A00DD7E3D /* HomeVC.swift */,
+			);
+			path = HomePageModule;
+			sourceTree = "<group>";
+		};
+		DF66DE7B216B2DC700FD30E8 /* SettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingsModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +241,7 @@
 				DF1988A3215CC47A00DD7E3D /* HomeVC.swift in Sources */,
 				DFDA8CCB215D351C009CA6BE /* MeditationInstructions.swift in Sources */,
 				DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */,
+				DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */,
 				DF198897215B519B00DD7E3D /* MeditationVC.swift in Sources */,
 				DF349F7321518B4B002CABF1 /* TabBarController.swift in Sources */,
 				DF1988A1215B539700DD7E3D /* DataService.swift in Sources */,

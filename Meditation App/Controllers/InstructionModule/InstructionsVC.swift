@@ -28,11 +28,7 @@ class InstructionsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // MARK: - Status bar and Top bar edit methods
-    
-//    // Changing status bar color to white
-//    override var preferredStatusBarStyle: UIStatusBarStyle{
-//        return .lightContent
-//    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         // Hide the navigation bar on the this view controller

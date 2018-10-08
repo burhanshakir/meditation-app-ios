@@ -15,14 +15,17 @@ class DataService
     // Meditations data will remain constant
     private let meditations = [
         
-        Meditation.init(title: "Basic Chakra Cuning", imageName: "basic-chakra.png"),
+        Meditation.init(title: "Basic Chakra Cuning", imageName: "basic-chakra.png",subMeditations: []),
         
-        Meditation.init(title: "Advanced Chakra Cuning", imageName: "adv-chakra.png"),
+        Meditation.init(title: "Advanced Chakra Cuning", imageName: "adv-chakra.png",subMeditations: []),
         
-        Meditation.init(title: "Source Code", imageName: "source-code.png"),
+        Meditation.init(title: "Source Code", imageName: "source-code.png",subMeditations: []),
         
-        Meditation.init(title: "G Space", imageName: "g-space.png")
+        Meditation.init(title: "G Space", imageName: "g-space.png",subMeditations: [])
     ]
+    
+    
+    
     
     //Meditation Instructions data
     
