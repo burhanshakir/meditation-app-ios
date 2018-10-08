@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8yi-db-htP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d79-Z2-7gr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -105,6 +105,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSS-fw-T8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-892" y="976.46176911544239"/>
+        </scene>
+        <!--Do MeditationVC-->
+        <scene sceneID="dFV-BJ-KNU">
+            <objects>
+                <viewController id="d79-Z2-7gr" customClass="DoMeditationVC" customModule="Meditation_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aMd-x0-ADc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DvJ-gf-Rxp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DvJ-gf-Rxp" firstAttribute="trailing" secondItem="px9-1y-NSI" secondAttribute="trailing" id="AU9-V4-XSM"/>
+                            <constraint firstItem="DvJ-gf-Rxp" firstAttribute="top" secondItem="aMd-x0-ADc" secondAttribute="top" id="EQF-1j-3Hv"/>
+                            <constraint firstItem="DvJ-gf-Rxp" firstAttribute="leading" secondItem="px9-1y-NSI" secondAttribute="leading" id="R3K-y1-S1m"/>
+                            <constraint firstItem="DvJ-gf-Rxp" firstAttribute="bottom" secondItem="px9-1y-NSI" secondAttribute="bottom" id="UQJ-CS-rt5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="px9-1y-NSI"/>
+                    </view>
+                    <connections>
+                        <outlet property="meditationImage" destination="DvJ-gf-Rxp" id="pev-GY-Vcg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Por-C7-aGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-892" y="1828.3358320839582"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Ouv-61-eYA">
