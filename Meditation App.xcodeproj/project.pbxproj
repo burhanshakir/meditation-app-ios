@@ -18,6 +18,7 @@
 		DF349F7821518B4C002CABF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7721518B4C002CABF1 /* Assets.xcassets */; };
 		DF349F7B21518B4C002CABF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7921518B4C002CABF1 /* LaunchScreen.storyboard */; };
 		DF4312AB2160E407002C202E /* MeditationInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */; };
+		DF4F1599216F6CB600A753BB /* spaceambientmix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF4F1598216F6CB600A753BB /* spaceambientmix.mp3 */; };
 		DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */; };
 		DF66DE81216BE48400FD30E8 /* SubMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */; };
 		DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */; };
@@ -41,6 +42,7 @@
 		DF349F7A21518B4C002CABF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF349F7C21518B4C002CABF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationInstructionVC.swift; sourceTree = "<group>"; };
+		DF4F1598216F6CB600A753BB /* spaceambientmix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = spaceambientmix.mp3; path = ../../../UI/spaceambientmix.mp3; sourceTree = "<group>"; };
 		DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationVC.swift; sourceTree = "<group>"; };
 		DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationCell.swift; sourceTree = "<group>"; };
 		DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMeditationCell.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		DF349F6F21518B4B002CABF1 /* Meditation App */ = {
 			isa = PBXGroup;
 			children = (
+				DF4F1598216F6CB600A753BB /* spaceambientmix.mp3 */,
 				DF19889F215B538700DD7E3D /* Services */,
 				DF3C346D2154F748005A3BEC /* View */,
 				DF3C346C2154F647005A3BEC /* Controllers */,
@@ -229,6 +232,7 @@
 				DF349F7B21518B4C002CABF1 /* LaunchScreen.storyboard in Resources */,
 				DF349F7821518B4C002CABF1 /* Assets.xcassets in Resources */,
 				DF349F7621518B4B002CABF1 /* Main.storyboard in Resources */,
+				DF4F1599216F6CB600A753BB /* spaceambientmix.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
