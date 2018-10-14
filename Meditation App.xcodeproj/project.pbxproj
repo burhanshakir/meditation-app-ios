@@ -19,6 +19,7 @@
 		DF349F7B21518B4C002CABF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7921518B4C002CABF1 /* LaunchScreen.storyboard */; };
 		DF4312AB2160E407002C202E /* MeditationInstructionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */; };
 		DF4F1599216F6CB600A753BB /* spaceambientmix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DF4F1598216F6CB600A753BB /* spaceambientmix.mp3 */; };
+		DF4F159B2171EB2B00A753BB /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4F159A2171EB2B00A753BB /* SettingsVC.swift */; };
 		DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */; };
 		DF66DE81216BE48400FD30E8 /* SubMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */; };
 		DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */; };
@@ -43,6 +44,7 @@
 		DF349F7C21518B4C002CABF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF4312AA2160E407002C202E /* MeditationInstructionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationInstructionVC.swift; sourceTree = "<group>"; };
 		DF4F1598216F6CB600A753BB /* spaceambientmix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = spaceambientmix.mp3; path = ../../../UI/spaceambientmix.mp3; sourceTree = "<group>"; };
+		DF4F159A2171EB2B00A753BB /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationVC.swift; sourceTree = "<group>"; };
 		DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationCell.swift; sourceTree = "<group>"; };
 		DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMeditationCell.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		DF66DE7B216B2DC700FD30E8 /* SettingsModule */ = {
 			isa = PBXGroup;
 			children = (
+				DF4F159A2171EB2B00A753BB /* SettingsVC.swift */,
 			);
 			path = SettingsModule;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				DF1988A3215CC47A00DD7E3D /* HomeVC.swift in Sources */,
 				DFDA8CCB215D351C009CA6BE /* MeditationInstructions.swift in Sources */,
 				DF66DE81216BE48400FD30E8 /* SubMeditationCell.swift in Sources */,
+				DF4F159B2171EB2B00A753BB /* SettingsVC.swift in Sources */,
 				DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */,
 				DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */,
 				DF198897215B519B00DD7E3D /* MeditationVC.swift in Sources */,
