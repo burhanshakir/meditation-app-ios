@@ -10,6 +10,10 @@ import UIKit
 
 class SettingsVC: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var bgImg: UIImageView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -17,15 +21,11 @@ class SettingsVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews()
+    {
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 851)
+//        bgImg.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: 10)
     }
-    */
+
 
 }
