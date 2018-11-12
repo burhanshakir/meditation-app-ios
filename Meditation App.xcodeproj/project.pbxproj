@@ -14,6 +14,7 @@
 		DF1988A3215CC47A00DD7E3D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1988A2215CC47A00DD7E3D /* HomeVC.swift */; };
 		DF2113C72189B57C00813902 /* UserDefaultKeyNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2113C62189B57C00813902 /* UserDefaultKeyNames.swift */; };
 		DF2113C9218B5B0100813902 /* ShowTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2113C8218B5B0100813902 /* ShowTimerVC.swift */; };
+		DF2113CB219748F600813902 /* ReminderAlertBoxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2113CA219748F600813902 /* ReminderAlertBoxVC.swift */; };
 		DF349F7121518B4B002CABF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF349F7021518B4B002CABF1 /* AppDelegate.swift */; };
 		DF349F7321518B4B002CABF1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF349F7221518B4B002CABF1 /* TabBarController.swift */; };
 		DF349F7621518B4B002CABF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF349F7421518B4B002CABF1 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		DF1988A2215CC47A00DD7E3D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DF2113C62189B57C00813902 /* UserDefaultKeyNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeyNames.swift; sourceTree = "<group>"; };
 		DF2113C8218B5B0100813902 /* ShowTimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTimerVC.swift; sourceTree = "<group>"; };
+		DF2113CA219748F600813902 /* ReminderAlertBoxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderAlertBoxVC.swift; sourceTree = "<group>"; };
 		DF349F6D21518B4B002CABF1 /* Meditation App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meditation App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF349F7021518B4B002CABF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF349F7221518B4B002CABF1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				DF4F159A2171EB2B00A753BB /* SettingsVC.swift */,
 				DF2113C8218B5B0100813902 /* ShowTimerVC.swift */,
+				DF2113CA219748F600813902 /* ReminderAlertBoxVC.swift */,
 			);
 			path = SettingsModule;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				DF1988A1215B539700DD7E3D /* DataService.swift in Sources */,
 				DFDA8CC7215D2424009CA6BE /* InstructionsVC.swift in Sources */,
 				DF198899215B525100DD7E3D /* MeditationCell.swift in Sources */,
+				DF2113CB219748F600813902 /* ReminderAlertBoxVC.swift in Sources */,
 				DFB46E78216A3F1000463259 /* DoMeditationVC.swift in Sources */,
 				DFDA8CC9215D345A009CA6BE /* InstructionsCell.swift in Sources */,
 				DF349F7121518B4B002CABF1 /* AppDelegate.swift in Sources */,

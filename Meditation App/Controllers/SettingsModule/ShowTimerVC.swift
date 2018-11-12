@@ -11,6 +11,7 @@ import UIKit
 class ShowTimerVC: UIViewController {
 
     @IBOutlet weak var timerPicker: UIDatePicker!
+    var delegate: TimerReceiveDelegate?
     
     override func viewDidLoad()
     {
@@ -43,6 +44,13 @@ class ShowTimerVC: UIViewController {
     @IBAction func savePressed(_ sender: Any)
     {
         print(timerPicker.countDownDuration)
+        
+        if delegate != nil
+        {
+            delegate?.setTimerValue(seconds: Int(timerPicker!.countDownDuration))
+            dismiss(animated: true, completion: nil)
+        }
+        
     }
     
 
