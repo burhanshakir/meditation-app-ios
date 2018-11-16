@@ -36,6 +36,10 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     // By default seconds are 120
     var timerSeconds : Int = 120
     
+    //By default reminder time and schedule is empty
+    var reminderTime : String = ""
+    var reminderFrequency : String = ""
+    
     // Setting up scroll view
     override func viewDidLayoutSubviews()
     {
@@ -47,7 +51,42 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Load Existing Settings
+        loadSettings(forMeditation: settingForMeditation)
     
+    }
+    
+    func loadSettings(forMeditation meditation : String)
+    {
+        var settings = UserDefaults.standard.dictionary(forKey: meditation)
+        
+        if(settings != nil)
+        {
+            musicSwitch.isOn = settings!["music"] as! Bool
+            landscapeSwitch.isOn = settings!["landscape"] as! Bool
+            reminderSwitch.isOn = settings!["reminder"] as! Bool
+            
+            if(meditation == UserDefaultKeyNames.Settings.chakraCuningSetting)
+            {
+//                let time = secondsToText(seconds: settings!["timer"] as! Int)
+//                timerBtn.setAttributedTitle(time, for: .normal)
+                setTimerValue(seconds: settings!["timer"] as! Int)
+            }
+        }
+        else // If no settings present set everything as default
+        {
+            // Setting timer as default
+//            let time = secondsToText(seconds: timerSeconds)
+//            timerBtn.setAttributedTitle(time, for: .normal)
+            setTimerValue(seconds: timerSeconds)
+            
+            musicSwitch.isOn = true
+            landscapeSwitch.isOn = false
+            reminderSwitch.isOn = false
+        }
+        
+        
     }
     
     
@@ -55,6 +94,7 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     @IBAction func chakraCuningPressed(_ sender: Any)
     {
         settingForMeditation = UserDefaultKeyNames.Settings.chakraCuningSetting
+        loadSettings(forMeditation: settingForMeditation)
         handleColorChange(forTab: "chakraCuning")
         doHideTimer(boolean: false)
     }
@@ -62,6 +102,7 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     @IBAction func sourceCodePressed(_ sender: Any)
     {
         settingForMeditation = UserDefaultKeyNames.Settings.sourceCodeSetting
+        loadSettings(forMeditation: settingForMeditation)
         handleColorChange(forTab: "sourceCode")
         doHideTimer(boolean: true)
     }
@@ -69,6 +110,7 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     @IBAction func gspacePressed(_ sender: Any)
     {
         settingForMeditation = UserDefaultKeyNames.Settings.gspaceSetting
+        loadSettings(forMeditation: settingForMeditation)
         handleColorChange(forTab: "gSpace")
         doHideTimer(boolean: true)
     }
@@ -86,6 +128,8 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         settings.updateValue(musicSwitch.isOn, forKey: "music")
         settings.updateValue(landscapeSwitch.isOn, forKey: "landscape")
         settings.updateValue(reminderSwitch.isOn, forKey: "reminder")
+        settings.updateValue(reminderTime, forKey: "reminderTime")
+        settings.updateValue(reminderFrequency, forKey: "reminderFrequency")
         
         UserDefaults.standard.set(settings, forKey: settingForMeditation)
         
@@ -100,26 +144,31 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     
     @IBAction func musicSwitchPressed(_ sender: Any)
     {
-        
+        print("Music switch Pressed")
     }
     
     @IBAction func reminderSwitchPressed(_ sender: Any)
     {
-        print("Music switch Pressed")
+        print("Reminder switch Pressed")
         
-        let reminderAlert = self.storyboard?.instantiateViewController(withIdentifier: "ReminderAlertID") as! ReminderAlertBoxVC
+        //Show Reminder Alert only when switch is off
+        if(reminderSwitch.isOn)
+        {
+            let reminderAlert = self.storyboard?.instantiateViewController(withIdentifier: "ReminderAlertID") as! ReminderAlertBoxVC
+            
+            reminderAlert.providesPresentationContextTransitionStyle = true
+            reminderAlert.definesPresentationContext = true
+            reminderAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            reminderAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            reminderAlert.delegate = self
+            self.present(reminderAlert, animated: true, completion: nil)
+        }
         
-        reminderAlert.providesPresentationContextTransitionStyle = true
-        reminderAlert.definesPresentationContext = true
-        reminderAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        reminderAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        reminderAlert.delegate = self
-        self.present(reminderAlert, animated: true, completion: nil)
     }
     
     @IBAction func landscapeSwitchPressed(_ sender: Any)
     {
-        
+        print("Landscape switch Pressed")
     }
     
     
@@ -191,6 +240,7 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         timerSeconds = seconds
         let time = secondsToText(seconds: timerSeconds)
         timerBtn.setAttributedTitle(time, for: .normal)
+        timerBtn.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         
     }
     
@@ -198,6 +248,9 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     func deleteButtonTapped()
     {
         print("Delete Button tapped")
+        reminderSwitch.isOn = false
+        reminderTime = ""
+        reminderFrequency = ""
     }
     
     func cancelButtonTapped()
@@ -208,6 +261,8 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     func saveButtonTapped(selectedTime: String, selectedRepeat: String)
     {
         print("Save Button tapped")
+        reminderTime = selectedTime
+        reminderFrequency = selectedRepeat
     }
     
     
@@ -232,6 +287,7 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         result.append(minText)
         result.append(colonText)
         result.append(secText)
+        
         
         return result
     }
@@ -263,9 +319,6 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         
 
     }
-    
-    
-    
     
     // MARK: - Navigation
     
