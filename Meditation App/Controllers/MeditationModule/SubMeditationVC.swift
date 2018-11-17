@@ -48,8 +48,9 @@ class SubMeditationVC: UIViewController,UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let meditation = subMeditations[indexPath.row]
-        self.performSegue(withIdentifier: "DoMeditationVC", sender: meditation)
+        var selectedMeditaion = meditation!
+        selectedMeditaion.selectedMeditationIndex = indexPath.row
+        self.performSegue(withIdentifier: "DoMeditationVC", sender: selectedMeditaion)
     }
     
 

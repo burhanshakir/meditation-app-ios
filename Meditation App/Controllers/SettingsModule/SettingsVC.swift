@@ -69,16 +69,12 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
             
             if(meditation == UserDefaultKeyNames.Settings.chakraCuningSetting)
             {
-//                let time = secondsToText(seconds: settings!["timer"] as! Int)
-//                timerBtn.setAttributedTitle(time, for: .normal)
                 setTimerValue(seconds: settings!["timer"] as! Int)
             }
         }
         else // If no settings present set everything as default
         {
             // Setting timer as default
-//            let time = secondsToText(seconds: timerSeconds)
-//            timerBtn.setAttributedTitle(time, for: .normal)
             setTimerValue(seconds: timerSeconds)
             
             musicSwitch.isOn = true
@@ -263,6 +259,8 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         print("Save Button tapped")
         reminderTime = selectedTime
         reminderFrequency = selectedRepeat
+        
+        // TODO:- Show message box to informa settings have been saved
     }
     
     

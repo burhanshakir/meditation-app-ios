@@ -13,6 +13,7 @@ struct Meditation
 {
     private(set) public var title : String!
     private(set) public var imageName : String!
+    public var selectedMeditationIndex: Int!
     
     private(set) public var subMeditations : [Meditation]
     
@@ -21,5 +22,11 @@ struct Meditation
         self.title = title
         self.imageName = imageName
         self.subMeditations = subMeditations
+        self.selectedMeditationIndex = 0;
     }
+    
+//    public mutating func setSelectedMeditationIndex(forIndex index : Int)
+//    {
+//        self.selectedMeditationIndex = index
+//    }
 }

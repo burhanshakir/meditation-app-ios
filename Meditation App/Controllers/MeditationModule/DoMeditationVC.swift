@@ -17,35 +17,100 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     public var meditation : Meditation!
     
     var meditationImageAsset : UIImage! = nil
+    var meditationSetting : String!
     
     var isSongAllowed : Bool = true;
     var meditationSoundEffect: AVAudioPlayer?
+    
+    // Default timer for Chakra Cuning meditations
+    var timer = 120
+    
+    // Default value for landscape settings
+    var isLandscapeLockEnabled = false
+    
+    // Selected Meditation of Image
+    var selectedMeditationIndex = 0
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        meditationImageAsset = UIImage(named: meditation.imageName)!
+        meditationImageAsset = UIImage(named: meditation.subMeditations[meditation.selectedMeditationIndex].imageName)!
         
-        //TODO :- Check for user defaults for meditation and display UI accordingly
-        
-        //Checks orientation and displays the correct image format
-        checkForOrientation()
+        loadSettings()
         
         // Add Gesture to dismiss image
         addSwipeGesture()
         
-        //play song
-        if isSongAllowed
-        {
-           playSong()
-        }
+        // TODO:- Show next and previous button on Source Code Meditations
+        
+        
         
     }
     
-    // MARK :- Gestures
+    // MARK:- Load settings
+    func loadSettings()
+    {
+        if(meditation.title.contains("Chakra Cuning"))
+        {
+            meditationSetting = UserDefaultKeyNames.Settings.chakraCuningSetting
+        }
+        else if(meditation.title.contains("Source Code"))
+        {
+            meditationSetting = UserDefaultKeyNames.Settings.sourceCodeSetting
+        }
+        else
+        {
+            meditationSetting = UserDefaultKeyNames.Settings.gspaceSetting
+        }
+        
+        var settings = UserDefaults.standard.dictionary(forKey: meditationSetting)
+        
+        if(settings != nil)
+        {
+            if (settings!["music"] as! Bool)
+            {
+                playSong()
+            }
+            
+            if(settings!["landscape"] as! Bool)
+            {
+                isLandscapeLockEnabled = true
+                
+            }
+            else
+            {
+                isLandscapeLockEnabled = false
+
+            }
+            
+            displayImageBasedOnSetting()
+            
+            if(meditationSetting == UserDefaultKeyNames.Settings.chakraCuningSetting)
+            {
+                timer = settings!["timer"] as! Int
+                
+                
+                var _ = Timer.scheduledTimer(timeInterval: TimeInterval(timer), target: self, selector: #selector(DoMeditationVC.changeImageBasedOnTimer), userInfo: nil, repeats: true)
+
+            }
+        }
+        else // If no settings present set everything as default
+        {
+            // Music will be played by default
+            playSong()
+            
+            // Orientation will be checked by default
+            checkForOrientation()
+        }
+    }
     
+    
+    // MARK:- Gestures
+    
+    // TODO:- Add animation when swiped down
     func addSwipeGesture()
     {
         
@@ -63,17 +128,50 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-    // MARK :- Meditation Image Display
+    // MARK:- Meditation Image Display
+    
+    private func displayImageBasedOnSetting()
+    {
+        if(isLandscapeLockEnabled)
+        {
+            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
+            displayImageInLandscape()
+        }
+        else
+        {
+            checkForOrientation()
+        }
+    }
+    
+    override var shouldAutorotate: Bool {
+        if(isLandscapeLockEnabled)
+        {
+            return true
+        }
+        return false
+        
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        
+        if(isLandscapeLockEnabled)
+        {
+            return .landscapeLeft
+        }
+        
+        return .portrait
+        
+    }
+    
     
     // On Orientation Changed
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
     {
         super.viewWillTransition(to: size, with: coordinator)
-        checkForOrientation()
-        
+        displayImageBasedOnSetting()
     }
     
-    //TODO :- Check User Preference and display image accordingly
     private func checkForOrientation()
     {
         if UIDevice.current.orientation.isLandscape
@@ -108,11 +206,26 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     private func setImage(image : UIImage)
     {
+        // TODO:- Add animation for change in image
         self.meditationImage.image = image
         self.meditationImage.contentMode = .scaleAspectFill
     }
     
-    // MARK :- Play Audio File
+    // Only for Chakra Cuning Meditations
+    @objc private func changeImageBasedOnTimer()
+    {
+        if(selectedMeditationIndex < meditation.subMeditations.count)
+        {
+            meditationImageAsset = UIImage(named: meditation.subMeditations[selectedMeditationIndex].imageName)!
+            
+            displayImageBasedOnSetting()
+            
+            selectedMeditationIndex = selectedMeditationIndex + 1
+            
+        }
+    }
+    
+    // MARK:- Play Audio File
     
     private func playSong()
     {
