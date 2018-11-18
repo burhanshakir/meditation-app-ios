@@ -42,6 +42,4 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
     }
     
-    
-
 }

@@ -120,6 +120,9 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func dismissScreen()
     {
+        // Stopping song
+        stopSong()
+        
         // Adding animation
         let transition: CATransition = CATransition()
         transition.duration = 0.5
@@ -257,6 +260,14 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // TODO:- Stop audio file
+    
+    private func stopSong()
+    {
+        if(meditationSoundEffect != nil)
+        {
+            meditationSoundEffect?.stop()
+        }
+    }
     // TODO:- Add watery animation on the meditation screen
 
 
