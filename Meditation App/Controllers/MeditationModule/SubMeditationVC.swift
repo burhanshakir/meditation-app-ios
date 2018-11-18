@@ -25,6 +25,23 @@ class SubMeditationVC: UIViewController,UICollectionViewDelegate, UICollectionVi
         subMeditationCollectionView.dataSource = self
     }
     
+    // MARK:- Screen orientation lock methods
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
+    }
+    
     
     
     // MARK: - Collection View Delegate Methods
@@ -54,10 +71,6 @@ class SubMeditationVC: UIViewController,UICollectionViewDelegate, UICollectionVi
     }
     
 
-    
-    
-    
-    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

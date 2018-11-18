@@ -28,11 +28,24 @@ class MeditationVC: UIViewController, UICollectionViewDelegate, UICollectionView
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    // MARK:- Screen orientation lock methods
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
     }
     
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
+    }
+   
+    // MARK:- Collectionview delegate methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -68,6 +81,8 @@ class MeditationVC: UIViewController, UICollectionViewDelegate, UICollectionView
         
         return MeditationCell()
     }
+    
+    // MARK:- Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {

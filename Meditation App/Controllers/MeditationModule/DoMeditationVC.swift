@@ -94,8 +94,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
                 
                 
                 var _ = Timer.scheduledTimer(timeInterval: TimeInterval(timer), target: self, selector: #selector(DoMeditationVC.changeImageBasedOnTimer), userInfo: nil, repeats: true)
-
-            }
+                }
         }
         else // If no settings present set everything as default
         {
@@ -110,7 +109,6 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK:- Gestures
     
-    // TODO:- Add animation when swiped down
     func addSwipeGesture()
     {
         
@@ -122,9 +120,17 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func dismissScreen()
     {
+        // Adding animation
+        let transition: CATransition = CATransition()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromBottom
+        self.view.window!.layer.add(transition, forKey: nil)
+        
         
         self.navigationController?.popViewController(animated: false)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     
@@ -184,6 +190,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    // TODO:- The half part of image is not being displayed
     private func displayImageInPortrait()
     {
         
@@ -206,8 +213,12 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     private func setImage(image : UIImage)
     {
-        // TODO:- Add animation for change in image
-        self.meditationImage.image = image
+        
+        UIView.transition(with: self.meditationImage,
+                          duration: 0.75,
+                          options: .transitionCrossDissolve,
+                          animations: { self.meditationImage.image = image },
+                          completion: nil)
         self.meditationImage.contentMode = .scaleAspectFill
     }
     
@@ -244,6 +255,9 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             print(error.localizedDescription)
         }
     }
+    
+    // TODO:- Stop audio file
+    // TODO:- Add watery animation on the meditation screen
 
 
 }

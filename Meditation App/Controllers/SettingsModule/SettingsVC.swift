@@ -131,6 +131,8 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         
         print("\(UserDefaults.standard.value(forKey: settingForMeditation)!)")
         
+        showSettingsSaveAlert()
+        
     }
     
     @IBAction func timerPressed(_ sender: Any)
@@ -260,7 +262,18 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         reminderTime = selectedTime
         reminderFrequency = selectedRepeat
         
-        // TODO:- Show message box to informa settings have been saved
+    }
+    
+    func showSettingsSaveAlert()
+    {
+        // create the alert
+        let alert = UIAlertController(title: "Alert", message: "Settings Saved!", preferredStyle: UIAlertController.Style.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
     
