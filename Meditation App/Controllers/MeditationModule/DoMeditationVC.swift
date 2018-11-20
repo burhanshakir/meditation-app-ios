@@ -226,6 +226,8 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // Only for Chakra Cuning Meditations
+    // TODO:- Question: What happens after reaching the final image ?
+    // TODO :- App crashes after reaching the last image
     @objc private func changeImageBasedOnTimer()
     {
         if(selectedMeditationIndex < meditation.subMeditations.count)
@@ -258,9 +260,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             print(error.localizedDescription)
         }
     }
-    
-    // TODO:- Stop audio file
-    
+        
     private func stopSong()
     {
         if(meditationSoundEffect != nil)

@@ -341,4 +341,6 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
             
         }
     }
+    
+    // TODO:- Add reminder functionality
 }
