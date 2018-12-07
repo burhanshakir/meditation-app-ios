@@ -17,16 +17,14 @@ struct Meditation
     
     private(set) public var subMeditations : [Meditation]
     
-    init(title : String, imageName : String, subMeditations : [Meditation] )
+    private(set) public var description : String!
+    
+    init(title : String, imageName : String, subMeditations : [Meditation], description : String)
     {
         self.title = title
         self.imageName = imageName
         self.subMeditations = subMeditations
-        self.selectedMeditationIndex = 0;
+        self.selectedMeditationIndex = 0
+        self.description = description
     }
-    
-//    public mutating func setSelectedMeditationIndex(forIndex index : Int)
-//    {
-//        self.selectedMeditationIndex = index
-//    }
 }

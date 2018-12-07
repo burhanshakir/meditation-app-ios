@@ -14,78 +14,79 @@ class DataService
     
    //Basic Chakra Cuning Meditation data
     
-    private let basicChakraCuning = [
-        Meditation.init(title: "8th Chakra", imageName: "8thchakra", subMeditations: []),
-        Meditation.init(title: "9th Chakra", imageName: "9thchakra", subMeditations: []),
-        Meditation.init(title: "10th Chakra", imageName: "10thchakra", subMeditations: []),
-        Meditation.init(title: "Base", imageName: "base", subMeditations: []),
-        Meditation.init(title: "Empty Mind", imageName: "empty mind", subMeditations: []),
-        Meditation.init(title: "Heart", imageName: "heart", subMeditations: []),
-        Meditation.init(title: "Sacrum", imageName: "sacrum", subMeditations: []),
-        Meditation.init(title: "Solarplex", imageName: "solarplex", subMeditations: []),
-        Meditation.init(title: "Third Eye", imageName: "thirdeye", subMeditations: []),
-        Meditation.init(title: "Throat", imageName: "throat", subMeditations: [])
+    private let basicChakraCuningSubMeditations = [
+        Meditation.init(title: "8th Chakra", imageName: "8thchakra", subMeditations: [], description: ""),
+        Meditation.init(title: "9th Chakra", imageName: "9thchakra", subMeditations: [], description: ""),
+        Meditation.init(title: "10th Chakra", imageName: "10thchakra", subMeditations: [], description: ""),
+        Meditation.init(title: "Base", imageName: "base", subMeditations: [], description: ""),
+        Meditation.init(title: "Empty Mind", imageName: "empty mind", subMeditations: [], description: ""),
+        Meditation.init(title: "Heart", imageName: "heart", subMeditations: [], description: ""),
+        Meditation.init(title: "Sacrum", imageName: "sacrum", subMeditations: [], description: ""),
+        Meditation.init(title: "Solarplex", imageName: "solarplex", subMeditations: [], description: ""),
+        Meditation.init(title: "Third Eye", imageName: "thirdeye", subMeditations: [], description: ""),
+        Meditation.init(title: "Throat", imageName: "throat", subMeditations: [], description: "")
     ]
     
     // Advanced Chakra Cuning Data
     
-    private let advChakraCuning = [
-        Meditation.init(title: "Base 10th", imageName: "base-10th", subMeditations: []),
-        Meditation.init(title: "Heart Crown", imageName: "heart-crown", subMeditations: []),
-        Meditation.init(title: "Sacrum 9th", imageName: "sacrum - 9th", subMeditations: []),
-        Meditation.init(title: "Solarplex 8th", imageName: "solarplex - 8th", subMeditations: []),
-        Meditation.init(title: "Throat Third Eye", imageName: "throat - third eye", subMeditations: []),
+    private let advChakraCuningSubMeditations = [
+        Meditation.init(title: "Base 10th", imageName: "base-10th", subMeditations: [], description: ""),
+        Meditation.init(title: "Heart Crown", imageName: "heart-crown", subMeditations: [], description: ""),
+        Meditation.init(title: "Sacrum 9th", imageName: "sacrum - 9th", subMeditations: [], description: ""),
+        Meditation.init(title: "Solarplex 8th", imageName: "solarplex - 8th", subMeditations: [], description: ""),
+        Meditation.init(title: "Throat Third Eye", imageName: "throat - third eye", subMeditations: [], description: ""),
     
         ]
     
     // Souce Code data
     
-    private let sourceCode = [
-        Meditation.init(title: "Creating", imageName: "1-creation", subMeditations: []),
-        Meditation.init(title: "Astral", imageName: "2-astral", subMeditations: []),
-        Meditation.init(title: "Forward Thinking", imageName: "3-forwardthinking", subMeditations: []),
-        Meditation.init(title: "Relationships", imageName: "4-relationships", subMeditations: []),
-        Meditation.init(title: "Throat", imageName: "5-throat", subMeditations: []),
-        Meditation.init(title: "Envy", imageName: "6-envy", subMeditations: []),
-        Meditation.init(title: "Inner Strength", imageName: "7-innerstrength", subMeditations: []),
-        Meditation.init(title: "Weight", imageName: "8-weight", subMeditations: []),
-        Meditation.init(title: "Sacral", imageName: "9-sacral", subMeditations: []),
-        Meditation.init(title: "Sexuality", imageName: "10-sexuality", subMeditations: []),
-        Meditation.init(title: "Third Eye", imageName: "11-thirdeye", subMeditations: []),
-        Meditation.init(title: "Solarplex", imageName: "12-solarplex", subMeditations: []),
-        Meditation.init(title: "Vision", imageName: "13-vision", subMeditations: []),
-        Meditation.init(title: "Whatif", imageName: "14-whatif", subMeditations: []),
-        Meditation.init(title: "Release", imageName: "15-release", subMeditations: []),
-        Meditation.init(title: "Pain", imageName: "16-pain", subMeditations: []),
-        Meditation.init(title: "Manifest", imageName: "17-manifest", subMeditations: []),
-        Meditation.init(title: "Anger", imageName: "18-anger", subMeditations: []),
-        Meditation.init(title: "Skin", imageName: "19-skin", subMeditations: []),
-        Meditation.init(title: "Love", imageName: "20-love", subMeditations: []),
-        Meditation.init(title: "Language", imageName: "21-language", subMeditations: []),
-        Meditation.init(title: "Joy", imageName: "22-joy", subMeditations: []),
-        Meditation.init(title: "Heart", imageName: "23-heart", subMeditations: []),
-        Meditation.init(title: "Psychedelic", imageName: "24-psychedelic", subMeditations: []),
-        Meditation.init(title: "Physical", imageName: "25-physical", subMeditations: []),
-        Meditation.init(title: "Guilt", imageName: "26-guilt", subMeditations: []),
-        Meditation.init(title: "Energy", imageName: "27-energy", subMeditations: []),
-        Meditation.init(title: "Definitive Thinking", imageName: "28-definitivethinking", subMeditations: []),
-        Meditation.init(title: "Crown", imageName: "29-crown", subMeditations: []),
-        Meditation.init(title: "Clarity", imageName: "30-clarity", subMeditations: []),
-        Meditation.init(title: "Centeredness", imageName: "31-centeredness", subMeditations: []),
-        Meditation.init(title: "Circulation", imageName: "32-circulation", subMeditations: []),
-        Meditation.init(title: "Base", imageName: "33-base", subMeditations: []),
+    private let sourceCodeSubMeditations = [
+        Meditation.init(title: "Creating", imageName: "1-creation", subMeditations: [], description: ""),
+        Meditation.init(title: "Astral", imageName: "2-astral", subMeditations: [], description: ""),
+        Meditation.init(title: "Forward Thinking", imageName: "3-forwardthinking", subMeditations: [], description: ""),
+        Meditation.init(title: "Relationships", imageName: "4-relationships", subMeditations: [], description: ""),
+        Meditation.init(title: "Throat", imageName: "5-throat", subMeditations: [], description: ""),
+        Meditation.init(title: "Envy", imageName: "6-envy", subMeditations: [], description: ""),
+        Meditation.init(title: "Inner Strength", imageName: "7-innerstrength", subMeditations: [], description: ""),
+        Meditation.init(title: "Weight", imageName: "8-weight", subMeditations: [], description: ""),
+        Meditation.init(title: "Sacral", imageName: "9-sacral", subMeditations: [], description: ""),
+        Meditation.init(title: "Sexuality", imageName: "10-sexuality", subMeditations: [], description: ""),
+        Meditation.init(title: "Third Eye", imageName: "11-thirdeye", subMeditations: [], description: ""),
+        Meditation.init(title: "Solarplex", imageName: "12-solarplex", subMeditations: [], description: ""),
+        Meditation.init(title: "Vision", imageName: "13-vision", subMeditations: [], description: ""),
+        Meditation.init(title: "Whatif", imageName: "14-whatif", subMeditations: [], description: ""),
+        Meditation.init(title: "Release", imageName: "15-release", subMeditations: [], description: ""),
+        Meditation.init(title: "Pain", imageName: "16-pain", subMeditations: [], description: ""),
+        Meditation.init(title: "Manifest", imageName: "17-manifest", subMeditations: [], description: ""),
+        Meditation.init(title: "Anger", imageName: "18-anger", subMeditations: [], description: ""),
+        Meditation.init(title: "Skin", imageName: "19-skin", subMeditations: [], description: ""),
+        Meditation.init(title: "Love", imageName: "20-love", subMeditations: [], description: ""),
+        Meditation.init(title: "Language", imageName: "21-language", subMeditations: [], description: ""),
+        Meditation.init(title: "Joy", imageName: "22-joy", subMeditations: [], description: ""),
+        Meditation.init(title: "Heart", imageName: "23-heart", subMeditations: [], description: ""),
+        Meditation.init(title: "Psychedelic", imageName: "24-psychedelic", subMeditations: [], description: ""),
+        Meditation.init(title: "Physical", imageName: "25-physical", subMeditations: [], description: ""),
+        Meditation.init(title: "Guilt", imageName: "26-guilt", subMeditations: [], description: ""),
+        Meditation.init(title: "Energy", imageName: "27-energy", subMeditations: [], description: ""),
+        Meditation.init(title: "Definitive Thinking", imageName: "28-definitivethinking", subMeditations: [], description: ""),
+        Meditation.init(title: "Crown", imageName: "29-crown", subMeditations: [], description: ""),
+        Meditation.init(title: "Clarity", imageName: "30-clarity", subMeditations: [], description: ""),
+        Meditation.init(title: "Centeredness", imageName: "31-centeredness", subMeditations: [], description: ""),
+        Meditation.init(title: "Circulation", imageName: "32-circulation", subMeditations: [], description: ""),
+        Meditation.init(title: "Base", imageName: "33-base", subMeditations: [], description: ""),
     ]
+    
     
     // Meditations data will remain constant
     private lazy var meditations = [
         
-        Meditation.init(title: "Basic Chakra Cuning", imageName: "basic-chakra.png",subMeditations: basicChakraCuning),
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.basicChakra, imageName: "basic-chakra.png",subMeditations: basicChakraCuningSubMeditations, description: "Basic Chakra Desc"),
         
-        Meditation.init(title: "Advanced Chakra Cuning", imageName: "adv-chakra.png",subMeditations: advChakraCuning),
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.advChakra, imageName: "adv-chakra.png",subMeditations: advChakraCuningSubMeditations, description: "Adv Chakra Desc"),
         
-        Meditation.init(title: "Source Code", imageName: "source-code.png",subMeditations: sourceCode),
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.sourceCode, imageName: "source-code.png",subMeditations: sourceCodeSubMeditations, description: "Source Code Desc"),
         
-        Meditation.init(title: "G Space", imageName: "g-space.png",subMeditations: [])
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.gSpace, imageName: "g-space.png",subMeditations: [], description: "G Space Desc")
     ]
     
     
@@ -128,13 +129,14 @@ class DataService
     
     func getLatestMeditation() -> [Meditation]
     {
-        // TODO :- Check with local storage if any latest meditation was done
-        let isLatestMeditationListExist = false
+ 
+        return [
+            
+            Meditation.init(title: "Centeredness", imageName: "31-centeredness", subMeditations: [], description: ""),
+            Meditation.init(title: "Solarplex", imageName: "12-solarplex", subMeditations: [], description: ""),
+            Meditation.init(title: "Forward Thinking", imageName: "3-forwardthinking", subMeditations: [], description: "")
         
-        if(!isLatestMeditationListExist)
-        {
-            return getBasicMeditations()
-        }
+        ]
         
     }
    

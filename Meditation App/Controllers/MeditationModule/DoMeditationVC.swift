@@ -39,10 +39,14 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         
         meditationImageAsset = UIImage(named: meditation.subMeditations[meditation.selectedMeditationIndex].imageName)!
         
+        
         loadSettings()
         
         // Add Gesture to dismiss image
         addSwipeGesture()
+        
+        //Storing latest meditation
+        storeLatestMeditation()
         
         // TODO:- Show next and previous button on Source Code Meditations
         
@@ -50,7 +54,18 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    // MARK:- Load settings
+    // MARK:- Loading and saving settings
+    
+    func storeLatestMeditation()
+    {
+        // Setting latest meditation name
+        UserDefaults.standard.set(meditation.title, forKey: UserDefaultKeyNames.LatestMeditation.meditationName)
+        
+        // Setting latest meditation desc
+        UserDefaults.standard.set(meditation.description, forKey: UserDefaultKeyNames.LatestMeditation.meditationDescription)
+    }
+    
+    
     func loadSettings()
     {
         if(meditation.title.contains("Chakra Cuning"))

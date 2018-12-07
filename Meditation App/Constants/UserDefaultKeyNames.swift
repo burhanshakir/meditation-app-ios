@@ -17,4 +17,18 @@ struct UserDefaultKeyNames
         static let sourceCodeSetting = "Source Code Settings"
         static let gspaceSetting = "G Space Settings"
     }
+    
+    struct LatestMeditation
+    {
+        static let meditationName = "Latest Meditation Name"
+        static let meditationDescription = "Latest Meditation Description"
+    }
+    
+    struct MeditationNames
+    {
+        static let basicChakra = "Basic Chakra Cuning"
+        static let advChakra = "Advanced Chakra Cuning"
+        static let sourceCode = "Source Code"
+        static let gSpace = "G Space"
+    }
 }

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class LatestMeditationCell: UICollectionViewCell {
+class LatestMeditationCell: UICollectionViewCell
+{
     @IBOutlet weak var meditationImage: UIImageView!
     @IBOutlet weak var meditationName: UILabel!
     

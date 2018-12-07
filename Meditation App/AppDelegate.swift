@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        UIApplication.shared.statusBarStyle = .lightContent
+        // Showing splash screen for 4 seconds
+        sleep(UInt32(3.0))
 
         return true
     }
