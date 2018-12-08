@@ -80,7 +80,7 @@ class DataService
     // Meditations data will remain constant
     private lazy var meditations = [
         
-        Meditation.init(title: UserDefaultKeyNames.MeditationNames.basicChakra, imageName: "basic-chakra.png",subMeditations: basicChakraCuningSubMeditations, description: "Basic Chakra Desc"),
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.basicChakra, imageName: "basic-chakra.png",subMeditations: basicChakraCuningSubMeditations, description: "Experience stereoscopic view along with music"),
         
         Meditation.init(title: UserDefaultKeyNames.MeditationNames.advChakra, imageName: "adv-chakra.png",subMeditations: advChakraCuningSubMeditations, description: "Adv Chakra Desc"),
         
