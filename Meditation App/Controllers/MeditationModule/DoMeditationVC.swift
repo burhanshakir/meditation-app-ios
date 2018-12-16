@@ -26,7 +26,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     var timer = 120
     
     // Default value for landscape settings
-    var isLandscapeLockEnabled = false
+    var isLandscapeLockEnabled = true
     
     // Selected Meditation of Image
     var selectedMeditationIndex = 0

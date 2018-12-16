@@ -44,6 +44,12 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             latestMeditationLabel.text = latestMeditationName
             latestMeditationDescLabel.text = latestMeditationDescription
         }
+        
+        let avgTime = AppUtility.getAvgTime()
+        avgMeditationTimeLabel.text = AppUtility.getAvgTimeInString(forTime: avgTime)
+        
+        mostMeditatedLabel.text = AppUtility.getMostMeditated()
+        
     }
     
     

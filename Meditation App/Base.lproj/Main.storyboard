@@ -1104,9 +1104,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="001-home" id="fmr-nH-tIk"/>
                     <connections>
+                        <outlet property="avgMeditationTimeLabel" destination="k8V-5D-5R3" id="eFI-g6-9j1"/>
                         <outlet property="latestMediationCollectionView" destination="yVz-HU-r0z" id="fHy-QF-P8h"/>
                         <outlet property="latestMeditationDescLabel" destination="yIu-1B-iRy" id="v6I-rJ-M3n"/>
                         <outlet property="latestMeditationLabel" destination="T7G-eN-kfs" id="Kgg-XU-mbH"/>
+                        <outlet property="mostMeditatedLabel" destination="NLi-Pm-Eju" id="csE-rW-dfd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdx-6m-zW6" userLabel="First Responder" sceneMemberID="firstResponder"/>

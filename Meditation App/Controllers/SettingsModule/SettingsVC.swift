@@ -40,6 +40,10 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     var reminderTime : String = ""
     var reminderFrequency : String = ""
     
+    // By default landscape is locked
+    var landscapeSetting : Bool = true
+    
+    
     // Setting up scroll view
     override func viewDidLayoutSubviews()
     {
@@ -78,7 +82,7 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
             setTimerValue(seconds: timerSeconds)
             
             musicSwitch.isOn = true
-            landscapeSwitch.isOn = false
+            landscapeSwitch.isOn = true
             reminderSwitch.isOn = false
         }
         
@@ -121,8 +125,10 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
             settings.updateValue(timerSeconds, forKey: "timer")
         }
         
+        landscapeSetting = landscapeSwitch.isOn
+        
         settings.updateValue(musicSwitch.isOn, forKey: "music")
-        settings.updateValue(landscapeSwitch.isOn, forKey: "landscape")
+        settings.updateValue(landscapeSetting, forKey: "landscape")
         settings.updateValue(reminderSwitch.isOn, forKey: "reminder")
         settings.updateValue(reminderTime, forKey: "reminderTime")
         settings.updateValue(reminderFrequency, forKey: "reminderFrequency")
