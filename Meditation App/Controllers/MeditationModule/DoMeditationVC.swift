@@ -30,12 +30,16 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     // Selected Meditation of Image
     var selectedMeditationIndex = 0
+    var meditationTime : Date!
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        meditationTime = Date()
         
         meditationImageAsset = UIImage(named: meditation.subMeditations[meditation.selectedMeditationIndex].imageName)!
         
@@ -121,6 +125,74 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    func storeMeditationTime(timeDone : TimeInterval)
+    {
+        //Storing time
+        
+        var meditationTimeUserDefaults = [String : Any]()
+        
+        if(UserDefaults.standard.dictionary(forKey: UserDefaultKeyNames.MeditationTime.totalMeditationTime) != nil)
+        {
+            meditationTimeUserDefaults = UserDefaults.standard.dictionary(forKey: UserDefaultKeyNames.MeditationTime.totalMeditationTime)!
+        }
+        
+        
+        var totalMeditationTime: TimeInterval = timeDone
+        
+        if(meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.time] != nil)
+        {
+            totalMeditationTime = totalMeditationTime.advanced(by: meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.time] as! TimeInterval)
+        }
+        
+        meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.time] = totalMeditationTime
+        
+        
+        // Storing frequency
+        var totalMeditationDone = 1
+        
+        if(meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.total] != nil)
+        {
+            totalMeditationDone = meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.total] as! Int + 1
+        }
+        
+        meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.total] = totalMeditationDone
+        
+        
+        //Storing count for meditation type
+        if(meditationSetting.contains("Cuning"))
+        {
+            let count : Int? = meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.chakraCuning] as? Int ?? 0
+            
+            
+            meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.chakraCuning] = count! + 1
+            
+            
+        }
+        
+        else if(meditationSetting.contains("Space"))
+        {
+            let count : Int? = meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.gSpace] as? Int ?? 0
+            
+            
+            meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.gSpace] = count! + 1
+            
+        }
+        
+        else
+        {
+            
+            let count : Int? = meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.sourceCode] as? Int ?? 0
+            
+            
+            meditationTimeUserDefaults[UserDefaultKeyNames.MeditationTime.sourceCode] = count! + 1
+            
+        }
+        
+        
+        UserDefaults.standard.set(meditationTimeUserDefaults, forKey: UserDefaultKeyNames.MeditationTime.totalMeditationTime)
+        
+    }
+    
     
     // MARK:- Gestures
     
@@ -137,6 +209,14 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     {
         // Stopping song
         stopSong()
+        
+        let meditationEnd = Date()
+        
+        let executionTime = meditationEnd.timeIntervalSince(meditationTime)
+        
+        
+        // Storing time of meditation
+        storeMeditationTime(timeDone: executionTime)
         
         // Adding animation
         let transition: CATransition = CATransition()

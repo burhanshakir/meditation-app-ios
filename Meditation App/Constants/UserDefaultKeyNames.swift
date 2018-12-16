@@ -31,4 +31,14 @@ struct UserDefaultKeyNames
         static let sourceCode = "Source Code"
         static let gSpace = "G Space"
     }
+    
+    struct MeditationTime
+    {
+        static let totalMeditationTime = "Total Meditation time"
+        static let time = "time"
+        static let total = "total"
+        static let chakraCuning = "Chakra Cuning"
+        static let sourceCode = "Source Code"
+        static let gSpace = "G Space"
+    }
 }

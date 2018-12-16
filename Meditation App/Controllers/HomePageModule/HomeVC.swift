@@ -13,6 +13,8 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var latestMediationCollectionView : UICollectionView!
     @IBOutlet weak var latestMeditationLabel: UILabel!
     @IBOutlet weak var latestMeditationDescLabel : UILabel!
+    @IBOutlet weak var avgMeditationTimeLabel : UILabel!
+    @IBOutlet weak var mostMeditatedLabel : UILabel!
     
     private var latestMeditations = [Meditation]()
     var latestMeditationName:String?
