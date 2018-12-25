@@ -26,6 +26,7 @@
 		DF4F159B2171EB2B00A753BB /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4F159A2171EB2B00A753BB /* SettingsVC.swift */; };
 		DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */; };
 		DF66DE81216BE48400FD30E8 /* SubMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */; };
+		DF8815EB21D256DC007D05B2 /* NavigationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8815EA21D256DC007D05B2 /* NavigationTableVC.swift */; };
 		DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */; };
 		DFB46E78216A3F1000463259 /* DoMeditationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB46E77216A3F1000463259 /* DoMeditationVC.swift */; };
 		DFD84A6521CC74EB003372C1 /* spaceambientmix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DFD84A6421CC74EB003372C1 /* spaceambientmix.mp3 */; };
@@ -58,6 +59,7 @@
 		DF4F159A2171EB2B00A753BB /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		DF66DE7C216B32C300FD30E8 /* SubMeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationVC.swift; sourceTree = "<group>"; };
 		DF66DE80216BE48400FD30E8 /* SubMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMeditationCell.swift; sourceTree = "<group>"; };
+		DF8815EA21D256DC007D05B2 /* NavigationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTableVC.swift; sourceTree = "<group>"; };
 		DF9E0902216673A6006D2287 /* LatestMeditationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMeditationCell.swift; sourceTree = "<group>"; };
 		DFB46E77216A3F1000463259 /* DoMeditationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoMeditationVC.swift; sourceTree = "<group>"; };
 		DFD84A6421CC74EB003372C1 /* spaceambientmix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spaceambientmix.mp3; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		DF3C346C2154F647005A3BEC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DF8815E921D256A6007D05B2 /* NavigationController */,
 				DF66DE7B216B2DC700FD30E8 /* SettingsModule */,
 				DF66DE7A216B2DBC00FD30E8 /* HomePageModule */,
 				DF66DE79216B2DB000FD30E8 /* InstructionModule */,
@@ -223,6 +226,14 @@
 				DF2113CA219748F600813902 /* ReminderAlertBoxVC.swift */,
 			);
 			path = SettingsModule;
+			sourceTree = "<group>";
+		};
+		DF8815E921D256A6007D05B2 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				DF8815EA21D256DC007D05B2 /* NavigationTableVC.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +355,7 @@
 				DF1988A3215CC47A00DD7E3D /* HomeVC.swift in Sources */,
 				DFDA8CCB215D351C009CA6BE /* MeditationInstructions.swift in Sources */,
 				DF66DE81216BE48400FD30E8 /* SubMeditationCell.swift in Sources */,
+				DF8815EB21D256DC007D05B2 /* NavigationTableVC.swift in Sources */,
 				DF4F159B2171EB2B00A753BB /* SettingsVC.swift in Sources */,
 				DF9E0903216673A6006D2287 /* LatestMeditationCell.swift in Sources */,
 				DF66DE7D216B32C300FD30E8 /* SubMeditationVC.swift in Sources */,

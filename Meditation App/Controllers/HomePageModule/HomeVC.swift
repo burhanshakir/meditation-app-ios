@@ -32,6 +32,12 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         setUpViews()
     }
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     
     func setUpViews()
     {
