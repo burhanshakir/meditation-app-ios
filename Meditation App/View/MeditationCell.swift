@@ -19,7 +19,23 @@ class MeditationCell: UICollectionViewCell {
     func updateViews(meditation : Meditation)
     {
         meditationImage.image = UIImage(named: meditation.imageName)
-        title.text = meditation.title
+        
+        
+        // Changing the UI of label if words are more than 3
+        let titleText = NSMutableString(string: meditation.title)
+        titleText.insert(" ", at: 0)
+        
+        if meditation.title.contains("Basic")
+        {
+            titleText.insert("\n", at: 6)
+        }
+        else if meditation.title.contains("Advanced")
+        {
+            titleText.insert("\n", at: 9)
+        }
+        
+        
+        title.text = titleText as String
     }
     
     // Onclick listener directing click handle to View Controller
