@@ -82,11 +82,11 @@ class DataService
         
         Meditation.init(title: UserDefaultKeyNames.MeditationNames.basicChakra, imageName: "basic-chakra.png",subMeditations: basicChakraCuningSubMeditations, description: "Experience stereoscopic view along with music"),
         
-        Meditation.init(title: UserDefaultKeyNames.MeditationNames.advChakra, imageName: "adv-chakra.png",subMeditations: advChakraCuningSubMeditations, description: "Adv Chakra Desc"),
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.advChakra, imageName: "adv-chakra.png",subMeditations: advChakraCuningSubMeditations, description: "Experience the Stereoscopic View with Music"),
         
-        Meditation.init(title: UserDefaultKeyNames.MeditationNames.sourceCode, imageName: "source-code.png",subMeditations: sourceCodeSubMeditations, description: "Source Code Desc"),
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.sourceCode, imageName: "source-code.png",subMeditations: sourceCodeSubMeditations, description: "Advanced Inner Work Using Targeted Symbols"),
         
-        Meditation.init(title: UserDefaultKeyNames.MeditationNames.gSpace, imageName: "g-space.png",subMeditations: [], description: "G Space Desc")
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.gSpace, imageName: "g-space.png",subMeditations: [], description: "Come Together with Others to Powerful Effect")
     ]
     
     
