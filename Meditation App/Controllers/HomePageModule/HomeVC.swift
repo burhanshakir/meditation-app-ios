@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var latestMediationCollectionView : UICollectionView!
     @IBOutlet weak var latestMeditationLabel: UILabel!
@@ -110,8 +111,29 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         self.present(doMeditationVC, animated: true, completion: nil)
     }
     
+    @IBAction func onReferPressed(_ sender: Any)
+    {
+        let emailTitle = "Superbeings Meditation App"
+        let messageBody = "Someone is thinking of you and thought you’d enjoy checking this out!"
+        
+        let mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setSubject(emailTitle)
+        mc.setMessageBody(messageBody, isHTML: false)
+        
+        self.present(mc, animated: true, completion: nil)
+
+    
+    }
     
     // MARK:- Delegate methods
+    
+    // Dismissing Mail COntroller after mail has been sent
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?)
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return latestMeditations.count
     }

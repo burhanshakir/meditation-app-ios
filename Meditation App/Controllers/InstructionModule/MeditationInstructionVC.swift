@@ -24,9 +24,5 @@ class MeditationInstructionVC: UIViewController {
         meditationName.text = meditation.name
         meditationInstructions.text = meditation.instruction
         
-        // TODO:- Instruction Not being displayed in full
     }
-    
-    
-
 }

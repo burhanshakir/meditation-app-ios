@@ -95,6 +95,16 @@ Chakra Cuning</string>
                                     <segue destination="zq8-Ym-HXc" kind="presentation" id="548-gl-Kvs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oot-vC-DMR">
+                                <rect key="frame" x="297" y="64" width="62" height="41"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <state key="normal" title="REFER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onReferPressed:" destination="IvX-UB-l4N" eventType="touchUpInside" id="tmB-v3-q5w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -106,7 +116,10 @@ Chakra Cuning</string>
                             <constraint firstItem="yPC-FW-1y2" firstAttribute="top" secondItem="yRl-5E-WhG" secondAttribute="top" constant="12" id="SpA-bA-BEo"/>
                             <constraint firstItem="yRl-5E-WhG" firstAttribute="bottom" secondItem="Jmz-bj-Kr8" secondAttribute="bottom" id="Xaj-vP-oLE"/>
                             <constraint firstItem="Jmz-bj-Kr8" firstAttribute="top" secondItem="0en-f2-ffM" secondAttribute="top" id="aVI-3a-LuQ"/>
+                            <constraint firstItem="Oot-vC-DMR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yPC-FW-1y2" secondAttribute="trailing" constant="8" symbolic="YES" id="e7s-6b-YeL"/>
+                            <constraint firstItem="Oot-vC-DMR" firstAttribute="top" secondItem="yRl-5E-WhG" secondAttribute="top" id="qWv-MA-Z96"/>
                             <constraint firstItem="ko3-DZ-UN9" firstAttribute="bottom" secondItem="yRl-5E-WhG" secondAttribute="bottom" id="yTR-OH-2FZ"/>
+                            <constraint firstItem="yRl-5E-WhG" firstAttribute="trailing" secondItem="Oot-vC-DMR" secondAttribute="trailing" constant="16" id="yhp-eS-N7V"/>
                             <constraint firstItem="yRl-5E-WhG" firstAttribute="trailing" secondItem="Jmz-bj-Kr8" secondAttribute="trailing" id="zxY-Jc-XaC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yRl-5E-WhG"/>
@@ -725,12 +738,12 @@ Chakra Cuning</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chakra Cuning" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qy-vr-VSd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic Chakra" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qy-vr-VSd">
                                                     <rect key="frame" x="15" y="11" width="345" height="55"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Ccf-eA-v3x"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="33"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -792,18 +805,31 @@ Chakra Cuning</string>
                                     <segue destination="zq8-Ym-HXc" kind="presentation" id="Okc-gF-0zQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppf-A4-wGJ">
+                                <rect key="frame" x="297" y="64" width="62" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="21"/>
+                                <state key="normal" title="REFER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onReferPressed:" destination="EON-dI-AsB" eventType="touchUpInside" id="bgZ-c8-Wtp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="z8H-RB-Kiy" firstAttribute="leading" secondItem="dSR-Ra-bbp" secondAttribute="leading" constant="8" id="3kG-EG-Gy4"/>
+                            <constraint firstItem="ppf-A4-wGJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z8H-RB-Kiy" secondAttribute="trailing" constant="8" symbolic="YES" id="7UT-Yc-eYY"/>
                             <constraint firstItem="1zK-LZ-7v1" firstAttribute="bottom" secondItem="dSR-Ra-bbp" secondAttribute="bottom" id="8AX-WJ-PeY"/>
                             <constraint firstItem="wyj-J0-6vu" firstAttribute="trailing" secondItem="dSR-Ra-bbp" secondAttribute="trailing" id="ApK-kl-HMT"/>
                             <constraint firstItem="1zK-LZ-7v1" firstAttribute="trailing" secondItem="dSR-Ra-bbp" secondAttribute="trailing" id="IHj-LH-uXg"/>
                             <constraint firstItem="wyj-J0-6vu" firstAttribute="top" secondItem="dSR-Ra-bbp" secondAttribute="top" constant="55" id="OI9-78-6hC"/>
+                            <constraint firstItem="ppf-A4-wGJ" firstAttribute="top" secondItem="dSR-Ra-bbp" secondAttribute="top" id="UuQ-tM-5O3"/>
                             <constraint firstItem="wyj-J0-6vu" firstAttribute="bottom" secondItem="dSR-Ra-bbp" secondAttribute="bottom" id="Wg1-4w-SOK"/>
                             <constraint firstItem="1zK-LZ-7v1" firstAttribute="top" secondItem="Orh-QA-oVb" secondAttribute="top" id="WvP-uI-xZQ"/>
                             <constraint firstItem="1zK-LZ-7v1" firstAttribute="leading" secondItem="dSR-Ra-bbp" secondAttribute="leading" id="cNu-Fn-lyS"/>
                             <constraint firstItem="z8H-RB-Kiy" firstAttribute="top" secondItem="dSR-Ra-bbp" secondAttribute="top" constant="12" id="dpq-i5-bqV"/>
+                            <constraint firstItem="dSR-Ra-bbp" firstAttribute="trailing" secondItem="ppf-A4-wGJ" secondAttribute="trailing" constant="16" id="k6A-TL-ifq"/>
                             <constraint firstItem="wyj-J0-6vu" firstAttribute="leading" secondItem="dSR-Ra-bbp" secondAttribute="leading" id="w3O-Lg-5Gg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dSR-Ra-bbp"/>
@@ -841,7 +867,7 @@ Chakra Cuning</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zE-Gm-nID">
-                                                <rect key="frame" x="8" y="82" width="359" height="26"/>
+                                                <rect key="frame" x="12" y="82" width="351" height="26"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -850,11 +876,11 @@ Chakra Cuning</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="eR1-1T-Cpz" firstAttribute="top" secondItem="XKB-ZD-JFY" secondAttribute="top" constant="43" id="78j-bS-oZe"/>
-                                            <constraint firstItem="9zE-Gm-nID" firstAttribute="leading" secondItem="XKB-ZD-JFY" secondAttribute="leading" constant="8" id="C6O-LJ-rtm"/>
+                                            <constraint firstItem="9zE-Gm-nID" firstAttribute="leading" secondItem="XKB-ZD-JFY" secondAttribute="leading" constant="12" id="C6O-LJ-rtm"/>
                                             <constraint firstItem="9zE-Gm-nID" firstAttribute="top" secondItem="eR1-1T-Cpz" secondAttribute="bottom" constant="8" id="MZC-em-ydq"/>
                                             <constraint firstItem="eR1-1T-Cpz" firstAttribute="leading" secondItem="XKB-ZD-JFY" secondAttribute="leading" constant="8" id="UM4-0x-Ter"/>
                                             <constraint firstItem="9zE-Gm-nID" firstAttribute="height" secondItem="XKB-ZD-JFY" secondAttribute="height" id="btj-xR-HSw"/>
-                                            <constraint firstAttribute="trailing" secondItem="9zE-Gm-nID" secondAttribute="trailing" constant="8" id="bzV-C8-oap"/>
+                                            <constraint firstAttribute="trailing" secondItem="9zE-Gm-nID" secondAttribute="trailing" constant="12" id="bzV-C8-oap"/>
                                             <constraint firstAttribute="trailing" secondItem="eR1-1T-Cpz" secondAttribute="trailing" constant="8" id="c3s-sn-jaR"/>
                                         </constraints>
                                     </view>
@@ -1097,8 +1123,19 @@ Chakra Cuning</string>
                                             <segue destination="zq8-Ym-HXc" kind="presentation" id="ywR-vF-k4n"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSg-GE-ai3">
+                                        <rect key="frame" x="297" y="0.0" width="62" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                        <state key="normal" title="REFER">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onReferPressed:" destination="jnI-fq-dXr" eventType="touchUpInside" id="4gl-He-Plo"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="mSg-GE-ai3" firstAttribute="top" secondItem="hJJ-gu-P2Q" secondAttribute="top" id="0CV-lK-AhL"/>
                                     <constraint firstAttribute="bottom" secondItem="yVz-HU-r0z" secondAttribute="bottom" constant="172" id="34L-Bl-UAE"/>
                                     <constraint firstItem="v76-by-yZu" firstAttribute="top" secondItem="N5r-a6-65L" secondAttribute="top" id="7A4-Br-Iiz"/>
                                     <constraint firstItem="yVz-HU-r0z" firstAttribute="top" secondItem="hJJ-gu-P2Q" secondAttribute="top" constant="255" id="AkE-TM-DdL"/>
@@ -1109,10 +1146,12 @@ Chakra Cuning</string>
                                     <constraint firstItem="yVz-HU-r0z" firstAttribute="trailing" secondItem="jRh-Cq-Six" secondAttribute="trailing" id="V8e-YB-EPp"/>
                                     <constraint firstItem="dG5-qK-4Fp" firstAttribute="leading" secondItem="hJJ-gu-P2Q" secondAttribute="leading" constant="2" id="Vbq-50-7v5"/>
                                     <constraint firstItem="v76-by-yZu" firstAttribute="width" secondItem="N5r-a6-65L" secondAttribute="width" id="W5w-sJ-RfE"/>
+                                    <constraint firstAttribute="trailing" secondItem="mSg-GE-ai3" secondAttribute="trailing" constant="24" id="YG2-LH-frl"/>
                                     <constraint firstItem="yVz-HU-r0z" firstAttribute="centerX" secondItem="hJJ-gu-P2Q" secondAttribute="centerX" id="ayL-In-6RE"/>
                                     <constraint firstItem="v76-by-yZu" firstAttribute="leading" secondItem="N5r-a6-65L" secondAttribute="trailing" constant="8" id="fBN-8v-ltJ"/>
                                     <constraint firstItem="N5r-a6-65L" firstAttribute="leading" secondItem="hJJ-gu-P2Q" secondAttribute="leading" id="hZg-vH-jQY"/>
                                     <constraint firstAttribute="trailing" secondItem="yVz-HU-r0z" secondAttribute="trailing" constant="20" id="lBI-Wi-m3H"/>
+                                    <constraint firstItem="mSg-GE-ai3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dG5-qK-4Fp" secondAttribute="trailing" constant="8" symbolic="YES" id="m0J-FV-yg2"/>
                                     <constraint firstItem="N5r-a6-65L" firstAttribute="top" secondItem="yVz-HU-r0z" secondAttribute="bottom" constant="30" id="zF9-m8-8xM"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -1432,7 +1471,7 @@ For other meditation and mental practices, please go here:
         <image name="theMeditationAppBg" width="539" height="968.15997314453125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="548-gl-Kvs"/>
+        <segue reference="Okc-gF-0zQ"/>
         <segue reference="Hg6-fq-pJK"/>
         <segue reference="YTK-Dp-jHg"/>
     </inferredMetricsTieBreakers>
