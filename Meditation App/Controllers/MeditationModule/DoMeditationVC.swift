@@ -13,6 +13,7 @@ import AVFoundation
 class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var meditationImage : UIImageView!
+    @IBOutlet weak var homeBtn : UIButton!
     
     public var meditation : Meditation!
     
@@ -31,6 +32,8 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     // Selected Meditation of Image
     var selectedMeditationIndex = 0
     var meditationTime : Date!
+    
+    var isButtonsDisplayed : Bool = false
     
 
     override func viewDidLoad()
@@ -52,7 +55,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         //Storing latest meditation
         storeLatestMeditation()
         
-        // TODO:- Show next and previous button on Source Code Meditations
+        // TODO:- Show next and home button on Source Code Meditations
         
         
         
@@ -203,6 +206,28 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         swipe.direction = .down
         
         self.view.addGestureRecognizer(swipe)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        
+        meditationImage.isUserInteractionEnabled = true
+        meditationImage.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    
+    @objc func imageTapped()
+    {
+        
+        if(isButtonsDisplayed)
+        {
+            homeBtn.isHidden = true
+        }
+        else
+        {
+            homeBtn.isHidden = false
+        }
+        
+        isButtonsDisplayed = !isButtonsDisplayed
+
     }
     
     @objc func dismissScreen()

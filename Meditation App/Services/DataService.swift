@@ -15,27 +15,30 @@ class DataService
    //Basic Chakra Cuning Meditation data
     
     private let basicChakraCuningSubMeditations = [
-        Meditation.init(title: "8th Chakra", imageName: "8thchakra", subMeditations: [], description: ""),
-        Meditation.init(title: "9th Chakra", imageName: "9thchakra", subMeditations: [], description: ""),
-        Meditation.init(title: "10th Chakra", imageName: "10thchakra", subMeditations: [], description: ""),
-        Meditation.init(title: "Base", imageName: "base", subMeditations: [], description: ""),
-        Meditation.init(title: "Empty Mind", imageName: "empty mind", subMeditations: [], description: ""),
-        Meditation.init(title: "Heart", imageName: "heart", subMeditations: [], description: ""),
-        Meditation.init(title: "Sacrum", imageName: "sacrum", subMeditations: [], description: ""),
-        Meditation.init(title: "Solarplex", imageName: "solarplex", subMeditations: [], description: ""),
+        Meditation.init(title: "Cuning Device", imageName: "empty mind", subMeditations: [], description: ""),
+        Meditation.init(title: "Throat", imageName: "throat", subMeditations: [], description: ""),
         Meditation.init(title: "Third Eye", imageName: "thirdeye", subMeditations: [], description: ""),
-        Meditation.init(title: "Throat", imageName: "throat", subMeditations: [], description: "")
-    ]
+        Meditation.init(title: "Heart", imageName: "heart", subMeditations: [], description: ""),
+        Meditation.init(title: "Heart Crown", imageName: "heart-crown", subMeditations: [], description: ""),
+        Meditation.init(title: "Solarplex", imageName: "solarplex", subMeditations: [], description: ""),
+        Meditation.init(title: "8th Chakra", imageName: "8thchakra", subMeditations: [], description: ""),
+        Meditation.init(title: "Sacrum", imageName: "sacrum", subMeditations: [], description: ""),
+        Meditation.init(title: "9th Chakra", imageName: "9thchakra", subMeditations: [], description: ""),
+        Meditation.init(title: "Base", imageName: "base", subMeditations: [], description: ""),
+        Meditation.init(title: "10th Chakra", imageName: "10thchakra", subMeditations: [], description: "")
+        
+        ]
     
     // Advanced Chakra Cuning Data
     
     private let advChakraCuningSubMeditations = [
-        Meditation.init(title: "Base 10th", imageName: "base-10th", subMeditations: [], description: ""),
-        Meditation.init(title: "Heart Crown", imageName: "heart-crown", subMeditations: [], description: ""),
-        Meditation.init(title: "Sacrum 9th", imageName: "sacrum - 9th", subMeditations: [], description: ""),
-        Meditation.init(title: "Solarplex 8th", imageName: "solarplex - 8th", subMeditations: [], description: ""),
+        Meditation.init(title: "Cuning Device", imageName: "empty mind", subMeditations: [], description: ""),
         Meditation.init(title: "Throat Third Eye", imageName: "throat - third eye", subMeditations: [], description: ""),
-    
+        Meditation.init(title: "Heart Crown", imageName: "heart-crown", subMeditations: [], description: ""),
+        Meditation.init(title: "Solarplex 8th", imageName: "solarplex - 8th", subMeditations: [], description: ""),
+        Meditation.init(title: "Sacrum 9th", imageName: "sacrum - 9th", subMeditations: [], description: ""),
+        Meditation.init(title: "Base 10th", imageName: "base-10th", subMeditations: [], description: "")
+        
         ]
     
     // Souce Code data
@@ -52,9 +55,9 @@ class DataService
         Meditation.init(title: "Sacral", imageName: "9-sacral", subMeditations: [], description: ""),
         Meditation.init(title: "Sexuality", imageName: "10-sexuality", subMeditations: [], description: ""),
         Meditation.init(title: "Third Eye", imageName: "11-thirdeye", subMeditations: [], description: ""),
-        Meditation.init(title: "Solarplex", imageName: "12-solarplex", subMeditations: [], description: ""),
+        Meditation.init(title: "Solar Plex", imageName: "12-solarplex", subMeditations: [], description: ""),
         Meditation.init(title: "Vision", imageName: "13-vision", subMeditations: [], description: ""),
-        Meditation.init(title: "Whatif", imageName: "14-whatif", subMeditations: [], description: ""),
+        Meditation.init(title: "What If", imageName: "14-whatif", subMeditations: [], description: ""),
         Meditation.init(title: "Release", imageName: "15-release", subMeditations: [], description: ""),
         Meditation.init(title: "Pain", imageName: "16-pain", subMeditations: [], description: ""),
         Meditation.init(title: "Manifest", imageName: "17-manifest", subMeditations: [], description: ""),
@@ -71,9 +74,9 @@ class DataService
         Meditation.init(title: "Definitive Thinking", imageName: "28-definitivethinking", subMeditations: [], description: ""),
         Meditation.init(title: "Crown", imageName: "29-crown", subMeditations: [], description: ""),
         Meditation.init(title: "Clarity", imageName: "30-clarity", subMeditations: [], description: ""),
-        Meditation.init(title: "Centeredness", imageName: "31-centeredness", subMeditations: [], description: ""),
+        Meditation.init(title: "Centering", imageName: "31-centeredness", subMeditations: [], description: ""),
         Meditation.init(title: "Circulation", imageName: "32-circulation", subMeditations: [], description: ""),
-        Meditation.init(title: "Base", imageName: "33-base", subMeditations: [], description: ""),
+        Meditation.init(title: "Base", imageName: "33-base", subMeditations: [], description: "")
     ]
     
     
