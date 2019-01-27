@@ -66,7 +66,7 @@ class MeditationVC: UIViewController, UICollectionViewDelegate, UICollectionView
             meditationCell.onStartButtonTapped = {
                 
                 // Chakra cuning meditaion users are directed to different screen
-                if(meditation.title.contains("Chakra Cuning"))
+                if(meditation.title.contains("Chakra Cuning") || meditation.title.contains("G Space"))
                 {
                     self.performSegue(withIdentifier: "DoMeditationVC", sender: meditation)
                 }

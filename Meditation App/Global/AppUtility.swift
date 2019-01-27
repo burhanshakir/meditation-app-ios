@@ -95,4 +95,12 @@ struct AppUtility {
         return "Chakra Cuning"
     }
     
+    static func getMeditationStreak() -> Int
+    {
+        let streak = UserDefaults.standard.integer(forKey: UserDefaultKeyNames.LatestMeditation.meditationStreak)
+        
+        return streak
+        
+    }
+    
 }

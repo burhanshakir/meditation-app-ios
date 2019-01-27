@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Showing splash screen for 4 seconds
         sleep(UInt32(3.0))
+        
+        // Asking permissions for notifications
+        let options: UNAuthorizationOptions = [.alert, .sound];
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: options)
+        {
+            (granted, error) in
+            if !granted
+            {
+                print("Something went wrong")
+            }
+        }
 
         return true
     }

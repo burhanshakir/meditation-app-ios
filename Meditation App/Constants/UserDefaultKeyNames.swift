@@ -22,6 +22,9 @@ struct UserDefaultKeyNames
     {
         static let meditationName = "Latest Meditation Name"
         static let meditationDescription = "Latest Meditation Description"
+        static let meditationDate = "Latest Meditation Date"
+        static let meditationStreak = "Latest Meditation Streak"
+        
     }
     
     struct MeditationNames

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 // Adding protocal to receive data from the next VC
 protocol TimerReceiveDelegate
@@ -55,10 +57,14 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+    
+    }
+    
+    // Showing updated values whenever screen is displayed
+    override func viewWillAppear(_ animated: Bool)
+    {
         // Load Existing Settings
         loadSettings(forMeditation: settingForMeditation)
-    
     }
     
     func loadSettings(forMeditation meditation : String)
@@ -138,6 +144,11 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         print("\(UserDefaults.standard.value(forKey: settingForMeditation)!)")
         
         showSettingsSaveAlert()
+        
+        // Setting up reminder notifications for Meditation
+        
+        configureNotifications(for: settingForMeditation, isReminderOn: reminderSwitch.isOn, reminderTime: reminderTime, reminderFreq: reminderFrequency)
+        
         
     }
     
@@ -270,6 +281,8 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         
     }
     
+    // MARK:- After Save pressed
+    
     func showSettingsSaveAlert()
     {
         // create the alert
@@ -282,9 +295,82 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         self.present(alert, animated: true, completion: nil)
     }
     
+    func configureNotifications(for meditation : String, isReminderOn : Bool, reminderTime : String, reminderFreq : String)
+    {
+    
+        
+        if(isReminderOn)
+        {
+            let content = UNMutableNotificationContent()
+            content.title = "Superbeing Meditation"
+            content.body = "Time for meditation!"
+            
+            // Configure the recurring date.
+            var dateComponents = DateComponents()
+            
+            // Cofiguring time for recurring date
+            
+            let reminderTimeInDate = convertStringToTime(time: reminderTime)
+            dateComponents.hour = Calendar.current.component(.hour, from: reminderTimeInDate)
+            dateComponents.minute = Calendar.current.component(.minute, from: reminderTimeInDate)
+            
+            
+            // Repeat weekly
+            if(reminderFrequency.contains("Weekly"))
+            {
+                let today = Date()
+                dateComponents.weekday = Calendar.current.component(.weekday, from: today)
+            }
+            
+            
+            // Create the trigger as a repeating event.
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            
+            
+            // Create the request
+            let uuidString = meditation
+            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+            
+                        
+            // Schedule the request with the system.
+            let notificationCenter = UNUserNotificationCenter.current()
+            notificationCenter.add(request) { (error) in
+                if error != nil
+                {
+                    // Handle any errors.
+                    print("Error Configuring Notifications \(String(describing: error))")
+                }
+            }
+            
+            print("Local Notifications Configured")
+            
+        }
+        
+        // Removing the notification requests if alert is off
+        else
+        {
+            let notificationCenter = UNUserNotificationCenter.current()
+            
+            notificationCenter.removePendingNotificationRequests(withIdentifiers: [meditation])
+
+        }
+    }
+    
     
     
     // MARK:- Helper Functions
+    
+    
+    // Convert String to date
+    func convertStringToTime(time : String) -> Date
+    {
+        let inFormatter = DateFormatter()
+        inFormatter.dateFormat = "HH:mm"
+        
+        let result = inFormatter.date(from: time)
+        
+        return result!
+    }
     
     // Returns time in seconds as an attributed text to be displayed on button
     func secondsToText(seconds :Int) -> NSMutableAttributedString

@@ -19,7 +19,7 @@ class DataService
         Meditation.init(title: "Throat", imageName: "throat", subMeditations: [], description: ""),
         Meditation.init(title: "Third Eye", imageName: "thirdeye", subMeditations: [], description: ""),
         Meditation.init(title: "Heart", imageName: "heart", subMeditations: [], description: ""),
-        Meditation.init(title: "Heart Crown", imageName: "heart-crown", subMeditations: [], description: ""),
+        Meditation.init(title: "Crown", imageName: "crown", subMeditations: [], description: ""),
         Meditation.init(title: "Solarplex", imageName: "solarplex", subMeditations: [], description: ""),
         Meditation.init(title: "8th Chakra", imageName: "8thchakra", subMeditations: [], description: ""),
         Meditation.init(title: "Sacrum", imageName: "sacrum", subMeditations: [], description: ""),
@@ -35,7 +35,7 @@ class DataService
         Meditation.init(title: "Cuning Device", imageName: "empty mind", subMeditations: [], description: ""),
         Meditation.init(title: "Throat Third Eye", imageName: "throat - third eye", subMeditations: [], description: ""),
         Meditation.init(title: "Heart Crown", imageName: "heart-crown", subMeditations: [], description: ""),
-        Meditation.init(title: "Solarplex 8th", imageName: "solarplex - 8th", subMeditations: [], description: ""),
+        Meditation.init(title: "Solarplex 8th", imageName: "solar plex - 8th", subMeditations: [], description: ""),
         Meditation.init(title: "Sacrum 9th", imageName: "sacrum - 9th", subMeditations: [], description: ""),
         Meditation.init(title: "Base 10th", imageName: "base-10th", subMeditations: [], description: "")
         
@@ -79,6 +79,11 @@ class DataService
         Meditation.init(title: "Base", imageName: "33-base", subMeditations: [], description: "")
     ]
     
+    // GSpace Image
+    private let gSpaceSubMeditations = [
+        Meditation.init(title: "Gspace", imageName: "gspace", subMeditations: [], description: "")
+    ]
+    
     
     // Meditations data will remain constant
     private lazy var meditations = [
@@ -89,7 +94,7 @@ class DataService
         
         Meditation.init(title: UserDefaultKeyNames.MeditationNames.sourceCode, imageName: "source-code.png",subMeditations: sourceCodeSubMeditations, description: "Advanced Inner Work Using Targeted Symbols"),
         
-        Meditation.init(title: UserDefaultKeyNames.MeditationNames.gSpace, imageName: "g-space.png",subMeditations: [], description: "Come Together with Others to Powerful Effect")
+        Meditation.init(title: UserDefaultKeyNames.MeditationNames.gSpace, imageName: "g-space.png",subMeditations: gSpaceSubMeditations, description: "Come Together with Others to Powerful Effect")
     ]
     
     

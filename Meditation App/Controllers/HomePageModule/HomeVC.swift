@@ -15,7 +15,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     @IBOutlet weak var latestMeditationLabel: UILabel!
     @IBOutlet weak var latestMeditationDescLabel : UILabel!
     @IBOutlet weak var avgMeditationTimeLabel : UILabel!
-    @IBOutlet weak var mostMeditatedLabel : UILabel!
+    @IBOutlet weak var meditationStreakLabel : UILabel!
     
     private var latestMeditations = [Meditation]()
     var latestMeditationName:String?
@@ -30,13 +30,15 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         latestMediationCollectionView.delegate = self
         latestMediationCollectionView.dataSource = self
         
-        setUpViews()
     }
+    
     
     override func viewWillAppear(_ animated: Bool)
     {
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        setUpViews()
     }
     
     
@@ -55,7 +57,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let avgTime = AppUtility.getAvgTime()
         avgMeditationTimeLabel.text = AppUtility.getAvgTimeInString(forTime: avgTime)
         
-        mostMeditatedLabel.text = AppUtility.getMostMeditated()
+        meditationStreakLabel.text = String(AppUtility.getMeditationStreak())
         
     }
     

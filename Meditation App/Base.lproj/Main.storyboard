@@ -143,40 +143,97 @@ Chakra Cuning</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DvJ-gf-Rxp">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DvJ-gf-Rxp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pE-lg-EXc">
-                                <rect key="frame" x="16" y="606" width="58" height="41"/>
+                                <rect key="frame" x="16" y="597" width="70" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="Pzr-vg-4vU"/>
-                                    <constraint firstAttribute="width" constant="58" id="mIS-Uk-2bv"/>
+                                    <constraint firstAttribute="height" constant="50" id="Pzr-vg-4vU"/>
+                                    <constraint firstAttribute="width" constant="70" id="mIS-Uk-2bv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.97647058819999999" green="0.97647058819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="homePressed:" destination="d79-Z2-7gr" eventType="touchUpInside" id="WCZ-AW-szV"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymb-NX-AmG">
+                                <rect key="frame" x="289" y="597" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="ae4-MG-6YX"/>
+                                    <constraint firstAttribute="height" constant="50" id="hz6-Qn-jAp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.97647058819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextPressed:" destination="d79-Z2-7gr" eventType="touchUpInside" id="ui8-yu-aYY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjt-S3-hIV">
+                                <rect key="frame" x="16" y="72" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="HlA-8u-Zdk"/>
+                                    <constraint firstAttribute="width" constant="25" id="fpv-MH-wuO"/>
+                                </constraints>
+                                <state key="normal" image="mute"/>
+                                <connections>
+                                    <action selector="muteBtnPressed:" destination="d79-Z2-7gr" eventType="touchUpInside" id="nhz-ES-txT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="sjt-S3-hIV" firstAttribute="top" secondItem="px9-1y-NSI" secondAttribute="top" constant="8" id="26p-Ao-uEJ"/>
                             <constraint firstItem="DvJ-gf-Rxp" firstAttribute="trailing" secondItem="px9-1y-NSI" secondAttribute="trailing" id="AU9-V4-XSM"/>
                             <constraint firstItem="DvJ-gf-Rxp" firstAttribute="top" secondItem="aMd-x0-ADc" secondAttribute="top" id="EQF-1j-3Hv"/>
+                            <constraint firstItem="px9-1y-NSI" firstAttribute="bottom" secondItem="Ymb-NX-AmG" secondAttribute="bottom" constant="20" id="HzV-7g-tcL"/>
                             <constraint firstItem="DvJ-gf-Rxp" firstAttribute="leading" secondItem="px9-1y-NSI" secondAttribute="leading" id="R3K-y1-S1m"/>
                             <constraint firstItem="DvJ-gf-Rxp" firstAttribute="bottom" secondItem="px9-1y-NSI" secondAttribute="bottom" id="UQJ-CS-rt5"/>
                             <constraint firstItem="6pE-lg-EXc" firstAttribute="leading" secondItem="px9-1y-NSI" secondAttribute="leading" constant="16" id="agt-J1-nKy"/>
                             <constraint firstItem="px9-1y-NSI" firstAttribute="bottom" secondItem="6pE-lg-EXc" secondAttribute="bottom" constant="20" id="ctV-iC-M7g"/>
+                            <constraint firstItem="sjt-S3-hIV" firstAttribute="leading" secondItem="px9-1y-NSI" secondAttribute="leading" constant="16" id="fhm-hP-A5x"/>
+                            <constraint firstItem="px9-1y-NSI" firstAttribute="trailing" secondItem="Ymb-NX-AmG" secondAttribute="trailing" constant="16" id="mun-dA-dKC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="px9-1y-NSI"/>
                     </view>
                     <connections>
                         <outlet property="homeBtn" destination="6pE-lg-EXc" id="prr-Pa-vPv"/>
                         <outlet property="meditationImage" destination="DvJ-gf-Rxp" id="pev-GY-Vcg"/>
+                        <outlet property="muteBtn" destination="sjt-S3-hIV" id="y15-vY-Vne"/>
+                        <outlet property="nextBtn" destination="Ymb-NX-AmG" id="cdm-ev-8bt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Por-C7-aGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="2598"/>
+            <point key="canvasLocation" x="-282.39999999999998" y="2597.4512743628188"/>
         </scene>
         <!--Sub MeditationVC-->
         <scene sceneID="WrB-j9-LdP">
@@ -1106,14 +1163,14 @@ Chakra Cuning</string>
                                                     <constraint firstAttribute="width" constant="2.5" id="x2s-LL-FBB"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chakra Cuning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLi-Pm-Eju">
-                                                <rect key="frame" x="15.5" y="25" width="137.5" height="27.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLi-Pm-Eju">
+                                                <rect key="frame" x="78" y="25" width="12" height="27.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOST MEDITATED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4m-Rk-ehs">
-                                                <rect key="frame" x="32" y="52.5" width="104" height="16.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEDITATION STREAK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4m-Rk-ehs">
+                                                <rect key="frame" x="24" y="52.5" width="120" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1193,7 +1250,7 @@ Chakra Cuning</string>
                         <outlet property="latestMediationCollectionView" destination="yVz-HU-r0z" id="fHy-QF-P8h"/>
                         <outlet property="latestMeditationDescLabel" destination="yIu-1B-iRy" id="v6I-rJ-M3n"/>
                         <outlet property="latestMeditationLabel" destination="T7G-eN-kfs" id="Kgg-XU-mbH"/>
-                        <outlet property="mostMeditatedLabel" destination="NLi-Pm-Eju" id="csE-rW-dfd"/>
+                        <outlet property="meditationStreakLabel" destination="NLi-Pm-Eju" id="csE-rW-dfd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdx-6m-zW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1480,12 +1537,13 @@ For other meditation and mental practices, please go here:
         <image name="basic-chakra" width="91.5" height="91.5"/>
         <image name="chakraCuningWhite" width="54.75" height="54.75"/>
         <image name="gspacewhite" width="54.75" height="54.75"/>
+        <image name="mute" width="48" height="48"/>
         <image name="nav" width="24" height="24"/>
         <image name="sourceCodeWhite" width="54.75" height="54.75"/>
         <image name="theMeditationAppBg" width="539" height="968.15997314453125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Okc-gF-0zQ"/>
+        <segue reference="ywR-vF-k4n"/>
         <segue reference="Hg6-fq-pJK"/>
         <segue reference="ufd-XX-odn"/>
     </inferredMetricsTieBreakers>

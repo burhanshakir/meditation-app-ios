@@ -14,6 +14,8 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var meditationImage : UIImageView!
     @IBOutlet weak var homeBtn : UIButton!
+    @IBOutlet weak var nextBtn : UIButton!
+    @IBOutlet weak var muteBtn : UIButton!
     
     public var meditation : Meditation!
     
@@ -50,26 +52,67 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         loadSettings()
         
         // Add Gesture to dismiss image
-        addSwipeGesture()
+        addGestures()
         
         //Storing latest meditation
-        storeLatestMeditation()
+        storeLatestMeditationUserDefaults()
         
         // TODO:- Show next and home button on Source Code Meditations
         
         
         
     }
+
     
     // MARK:- Loading and saving settings
     
-    func storeLatestMeditation()
+    func storeLatestMeditationUserDefaults()
     {
         // Setting latest meditation name
         UserDefaults.standard.set(meditation.title, forKey: UserDefaultKeyNames.LatestMeditation.meditationName)
         
         // Setting latest meditation desc
         UserDefaults.standard.set(meditation.description, forKey: UserDefaultKeyNames.LatestMeditation.meditationDescription)
+        
+        
+        // Storing Meditation Streak
+        let todaysDate = Date()
+        
+        var lastMeditationDate = UserDefaults.standard.object(forKey: UserDefaultKeyNames.LatestMeditation.meditationDate) as? Date
+        
+        var meditationStreak = UserDefaults.standard.integer(forKey: UserDefaultKeyNames.LatestMeditation.meditationStreak)
+        
+        
+        if lastMeditationDate != nil
+        {
+            // Checking if the meditation dates are consecutive
+            
+            let diff = todaysDate.interval(ofComponent: .day, fromDate: lastMeditationDate!)
+            
+            // If dates are consecutive, increase the counter else set the counter to 1
+            if diff == 1
+            {
+                meditationStreak = meditationStreak + 1
+            }
+            else
+            {
+                meditationStreak = 1
+            }
+        }
+        else
+        {
+            // Storing the counter for the first time
+            meditationStreak = 1
+        }
+        
+        lastMeditationDate = todaysDate
+        
+        // Storing the latest values for streak
+        
+        UserDefaults.standard.set(lastMeditationDate, forKey: UserDefaultKeyNames.LatestMeditation.meditationDate)
+        UserDefaults.standard.set(meditationStreak, forKey: UserDefaultKeyNames.LatestMeditation.meditationStreak)
+        
+        
     }
     
     
@@ -95,6 +138,10 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             if (settings!["music"] as! Bool)
             {
                 playSong()
+            }
+            else
+            {
+                muteBtn.isHidden = true
             }
             
             if(settings!["landscape"] as! Bool)
@@ -199,7 +246,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK:- Gestures
     
-    func addSwipeGesture()
+    func addGestures()
     {
         
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(dismissScreen))
@@ -220,10 +267,12 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         if(isButtonsDisplayed)
         {
             homeBtn.isHidden = true
+            nextBtn.isHidden = true
         }
         else
         {
             homeBtn.isHidden = false
+            nextBtn.isHidden = false
         }
         
         isButtonsDisplayed = !isButtonsDisplayed
@@ -254,6 +303,27 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         
         self.navigationController?.popViewController(animated: false)
         self.dismiss(animated: false, completion: nil)
+    }
+    
+    // MARK:- IBActions
+    
+    
+    @IBAction func homePressed(_ sender: Any)
+    {
+        dismissScreen()
+    }
+    
+    
+    @IBAction func nextPressed(_ sender: Any)
+    {
+        changeImageBasedOnTimer()
+    }
+    
+    
+    @IBAction func muteBtnPressed(_ sender: Any)
+    {
+        stopSong()
+        muteBtn.isHidden = true
     }
     
     
@@ -324,41 +394,43 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         
         let result: UIImage = UIImage(cgImage: cgImageMeditation!, scale: 0.0, orientation: meditationImageAsset.imageOrientation)
         
-        setImage(image: result)
+        setImage(image: result, orientation: "portrait")
 
     }
     
     private func displayImageInLandscape()
     {
         //Displaying image as is
-        setImage(image: meditationImageAsset)
+        setImage(image: meditationImageAsset, orientation: "landscape")
     }
     
-    private func setImage(image : UIImage)
+    private func setImage(image : UIImage, orientation : String)
     {
+        
+        // Resizing image based on screen size
+        let resizedImage = image.resizeImageWith(viewSize: meditationImage.frame.size, orientation: orientation)
         
         UIView.transition(with: self.meditationImage,
                           duration: 0.75,
                           options: .transitionCrossDissolve,
-                          animations: { self.meditationImage.image = image },
+                          animations: { self.meditationImage.image = resizedImage },
                           completion: nil)
-        self.meditationImage.contentMode = .scaleAspectFill
     }
     
     // Only for Chakra Cuning Meditations
     // TODO:- Question: What happens after reaching the final image ?
-    // TODO :- App crashes after reaching the last image
     @objc private func changeImageBasedOnTimer()
     {
-        if(selectedMeditationIndex < meditation.subMeditations.count)
+        if(selectedMeditationIndex < meditation.subMeditations.count - 1)
         {
-            meditationImageAsset = UIImage(named: meditation.subMeditations[selectedMeditationIndex].imageName)!
+            meditationImageAsset = UIImage(named: meditation.subMeditations[selectedMeditationIndex+1].imageName)!
             
             displayImageBasedOnSetting()
             
             selectedMeditationIndex = selectedMeditationIndex + 1
             
         }
+        
     }
     
     // MARK:- Play Audio File
