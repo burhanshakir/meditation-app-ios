@@ -272,7 +272,14 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         else
         {
             homeBtn.isHidden = false
-            nextBtn.isHidden = false
+            
+            // Show next button only if more images are left
+            
+            if(selectedMeditationIndex < meditation.subMeditations.count - 1)
+            {
+                nextBtn.isHidden = false
+            }
+            
         }
         
         isButtonsDisplayed = !isButtonsDisplayed
@@ -430,6 +437,10 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             selectedMeditationIndex = selectedMeditationIndex + 1
             
         }
+        else
+        {
+            dismissScreen()
+        }
         
     }
     
@@ -460,6 +471,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             meditationSoundEffect?.stop()
         }
     }
+    
     // TODO:- Add watery animation on the meditation screen
 
 
