@@ -197,7 +197,7 @@ Chakra Cuning</string>
                                     <action selector="nextPressed:" destination="d79-Z2-7gr" eventType="touchUpInside" id="ui8-yu-aYY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjt-S3-hIV">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjt-S3-hIV">
                                 <rect key="frame" x="16" y="72" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="HlA-8u-Zdk"/>

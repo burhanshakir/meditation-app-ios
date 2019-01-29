@@ -57,14 +57,15 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    
+        
+        // Load Existing Settings
+        loadSettings(forMeditation: settingForMeditation)
     }
     
     // Showing updated values whenever screen is displayed
     override func viewWillAppear(_ animated: Bool)
     {
-        // Load Existing Settings
-        loadSettings(forMeditation: settingForMeditation)
+        
     }
     
     func loadSettings(forMeditation meditation : String)
@@ -76,22 +77,21 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
             musicSwitch.isOn = settings!["music"] as! Bool
             landscapeSwitch.isOn = settings!["landscape"] as! Bool
             reminderSwitch.isOn = settings!["reminder"] as! Bool
-            
-            if(meditation == UserDefaultKeyNames.Settings.chakraCuningSetting)
+                        
+            if(settings!["timer"] as? Int != nil)
             {
-                setTimerValue(seconds: settings!["timer"] as! Int)
+                timerSeconds = settings!["timer"] as! Int
             }
+            
         }
         else // If no settings present set everything as default
         {
-            // Setting timer as default
-            setTimerValue(seconds: timerSeconds)
-            
             musicSwitch.isOn = true
             landscapeSwitch.isOn = true
             reminderSwitch.isOn = false
         }
         
+        setTimerValue(seconds: timerSeconds)
         
     }
     
@@ -110,7 +110,7 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         settingForMeditation = UserDefaultKeyNames.Settings.sourceCodeSetting
         loadSettings(forMeditation: settingForMeditation)
         handleColorChange(forTab: "sourceCode")
-        doHideTimer(boolean: true)
+        doHideTimer(boolean: false)
     }
     
     @IBAction func gspacePressed(_ sender: Any)
@@ -118,7 +118,7 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
         settingForMeditation = UserDefaultKeyNames.Settings.gspaceSetting
         loadSettings(forMeditation: settingForMeditation)
         handleColorChange(forTab: "gSpace")
-        doHideTimer(boolean: true)
+        doHideTimer(boolean: false)
     }
     
     
@@ -126,13 +126,14 @@ class SettingsVC: UIViewController, TimerReceiveDelegate, ReminderAlertDelegate
     {
         var settings = [String : Any]()
         
-        if(settingForMeditation == UserDefaultKeyNames.Settings.chakraCuningSetting)
-        {
-            settings.updateValue(timerSeconds, forKey: "timer")
-        }
+//        if(settingForMeditation == UserDefaultKeyNames.Settings.chakraCuningSetting)
+//        {
+//            settings.updateValue(timerSeconds, forKey: "timer")
+//        }
         
         landscapeSetting = landscapeSwitch.isOn
         
+        settings.updateValue(timerSeconds, forKey: "timer")
         settings.updateValue(musicSwitch.isOn, forKey: "music")
         settings.updateValue(landscapeSetting, forKey: "landscape")
         settings.updateValue(reminderSwitch.isOn, forKey: "reminder")

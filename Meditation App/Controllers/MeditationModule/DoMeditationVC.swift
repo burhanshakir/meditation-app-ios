@@ -36,6 +36,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     var meditationTime : Date!
     
     var isButtonsDisplayed : Bool = false
+    var isMute : Bool = false
     
 
     override func viewDidLoad()
@@ -90,7 +91,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             let diff = todaysDate.interval(ofComponent: .day, fromDate: lastMeditationDate!)
             
             // If dates are consecutive, increase the counter else set the counter to 1
-            if diff == 1
+            if diff >= 1
             {
                 meditationStreak = meditationStreak + 1
             }
@@ -138,10 +139,11 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             if (settings!["music"] as! Bool)
             {
                 playSong()
+                isMute = false
             }
             else
             {
-                muteBtn.isHidden = true
+                isMute = true
             }
             
             if(settings!["landscape"] as! Bool)
@@ -157,13 +159,8 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             
             displayImageBasedOnSetting()
             
-            if(meditationSetting == UserDefaultKeyNames.Settings.chakraCuningSetting)
-            {
-                timer = settings!["timer"] as! Int
-                
-                
-                var _ = Timer.scheduledTimer(timeInterval: TimeInterval(timer), target: self, selector: #selector(DoMeditationVC.changeImageBasedOnTimer), userInfo: nil, repeats: true)
-                }
+            timer = settings!["timer"] as! Int
+            
         }
         else // If no settings present set everything as default
         {
@@ -173,6 +170,8 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             // Orientation will be checked by default
             checkForOrientation()
         }
+        
+         var _ = Timer.scheduledTimer(timeInterval: TimeInterval(timer), target: self, selector: #selector(DoMeditationVC.changeImageBasedOnTimer), userInfo: nil, repeats: true)
     }
     
     func storeMeditationTime(timeDone : TimeInterval)
@@ -268,6 +267,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         {
             homeBtn.isHidden = true
             nextBtn.isHidden = true
+            muteBtn.isHidden = true
         }
         else
         {
@@ -279,6 +279,8 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             {
                 nextBtn.isHidden = false
             }
+            
+            muteBtn.isHidden = isMute
             
         }
         
@@ -330,6 +332,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func muteBtnPressed(_ sender: Any)
     {
         stopSong()
+        isMute = true
         muteBtn.isHidden = true
     }
     
