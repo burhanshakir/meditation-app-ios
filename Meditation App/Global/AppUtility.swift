@@ -97,7 +97,29 @@ struct AppUtility {
     
     static func getMeditationStreak() -> Int
     {
-        let streak = UserDefaults.standard.integer(forKey: UserDefaultKeyNames.LatestMeditation.meditationStreak)
+        var streak = UserDefaults.standard.integer(forKey: UserDefaultKeyNames.LatestMeditation.meditationStreak)
+        
+        let todaysDate = Date()
+        
+        let lastMeditationDate = UserDefaults.standard.object(forKey: UserDefaultKeyNames.LatestMeditation.meditationDate) as? Date
+        
+        if lastMeditationDate != nil
+        {
+            // Checking if the meditation dates are consecutive
+            
+            let diff = todaysDate.interval(ofComponent: .day, fromDate: lastMeditationDate!)
+            
+            // If dates are not consecutive, return streak as 0
+            if diff > 1
+            {
+                streak = 0
+            }
+        }
+        else
+        {
+            streak = 0
+        }
+        
         
         return streak
         

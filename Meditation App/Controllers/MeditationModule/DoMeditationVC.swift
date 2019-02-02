@@ -91,7 +91,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             let diff = todaysDate.interval(ofComponent: .day, fromDate: lastMeditationDate!)
             
             // If dates are consecutive, increase the counter else set the counter to 1
-            if diff >= 1
+            if diff == 1
             {
                 meditationStreak = meditationStreak + 1
             }
@@ -265,27 +265,37 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         
         if(isButtonsDisplayed)
         {
-            homeBtn.isHidden = true
-            nextBtn.isHidden = true
-            muteBtn.isHidden = true
+            
+            doHide(view: homeBtn, hidden: true)
+            doHide(view: nextBtn, hidden: true)
+            doHide(view: muteBtn, hidden: true)
         }
         else
         {
-            homeBtn.isHidden = false
+            doHide(view: homeBtn, hidden: false)
             
             // Show next button only if more images are left
             
             if(selectedMeditationIndex < meditation.subMeditations.count - 1)
             {
-                nextBtn.isHidden = false
+                doHide(view: nextBtn, hidden: false)
             }
             
-            muteBtn.isHidden = isMute
+            doHide(view: muteBtn, hidden: isMute)
             
         }
         
         isButtonsDisplayed = !isButtonsDisplayed
 
+    }
+    
+    // Hide/Show button with animation
+    func doHide(view: UIView, hidden: Bool)
+    {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations:
+        {
+            view.isHidden = hidden
+        })
     }
     
     @objc func dismissScreen()
