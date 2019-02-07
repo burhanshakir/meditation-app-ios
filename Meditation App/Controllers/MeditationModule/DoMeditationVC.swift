@@ -38,6 +38,7 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     var isButtonsDisplayed : Bool = false
     var isMute : Bool = false
     
+    var imageBtnTapTimer : Timer?
 
     override func viewDidLoad()
     {
@@ -281,7 +282,9 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
                 doHide(view: nextBtn, hidden: false)
             }
             
-            doHide(view: muteBtn, hidden: isMute)
+            doHide(view: muteBtn, hidden: false)
+            
+            imageBtnTapTimer = Timer.scheduledTimer(timeInterval: TimeInterval(5), target: self, selector: #selector(DoMeditationVC.hideBtnsAfterTap), userInfo: nil, repeats: true)
             
         }
         
@@ -341,9 +344,22 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func muteBtnPressed(_ sender: Any)
     {
-        stopSong()
-        isMute = true
-        muteBtn.isHidden = true
+        
+        
+        // If mute pressed
+        if isMute == false
+        {
+            muteBtn.setImage(UIImage(named: "speaker"), for: .normal)
+            stopSong()
+            isMute = true
+        }
+        else
+        {
+            muteBtn.setImage(UIImage(named: "mute"), for: .normal)
+            playSong()
+            isMute = false
+        }
+        
     }
     
     
@@ -437,8 +453,6 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
                           completion: nil)
     }
     
-    // Only for Chakra Cuning Meditations
-    // TODO:- Question: What happens after reaching the final image ?
     @objc private func changeImageBasedOnTimer()
     {
         if(selectedMeditationIndex < meditation.subMeditations.count - 1)
@@ -455,6 +469,21 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             dismissScreen()
         }
         
+    }
+    
+    @objc private func hideBtnsAfterTap()
+    {
+        doHide(view: homeBtn, hidden: true)
+        doHide(view: nextBtn, hidden: true)
+        doHide(view: muteBtn, hidden: true)
+        
+        if imageBtnTapTimer != nil
+        {
+            imageBtnTapTimer?.invalidate()
+            imageBtnTapTimer = nil
+        }
+        
+        isButtonsDisplayed = !isButtonsDisplayed
     }
     
     // MARK:- Play Audio File
