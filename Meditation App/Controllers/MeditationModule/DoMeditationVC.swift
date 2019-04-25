@@ -50,6 +50,15 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         
         meditationImageAsset = UIImage(named: meditation.subMeditations[meditation.selectedMeditationIndex].imageName)!
         
+        // Play song even if silent (hardware) switch is on
+        do
+        {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .defaultToSpeaker)
+        }
+        catch
+        {
+            // report for an error
+        }
         
         loadSettings()
         
@@ -284,12 +293,17 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             
             doHide(view: muteBtn, hidden: false)
             
-            imageBtnTapTimer = Timer.scheduledTimer(timeInterval: TimeInterval(5), target: self, selector: #selector(DoMeditationVC.hideBtnsAfterTap), userInfo: nil, repeats: true)
+            setTimerForButtonsToHide()
             
         }
         
         isButtonsDisplayed = !isButtonsDisplayed
 
+    }
+    
+    func setTimerForButtonsToHide()
+    {
+        imageBtnTapTimer = Timer.scheduledTimer(timeInterval: TimeInterval(5), target: self, selector: #selector(DoMeditationVC.hideBtnsAfterTap), userInfo: nil, repeats: true)
     }
     
     // Hide/Show button with animation
@@ -339,6 +353,9 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func nextPressed(_ sender: Any)
     {
         changeImageBasedOnTimer()
+        
+        deleteButtonTapTimer()
+        setTimerForButtonsToHide()
     }
     
     
@@ -359,6 +376,9 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
             playSong()
             isMute = false
         }
+        
+        deleteButtonTapTimer()
+        setTimerForButtonsToHide()
         
     }
     
@@ -477,13 +497,18 @@ class DoMeditationVC: UIViewController, UIGestureRecognizerDelegate {
         doHide(view: nextBtn, hidden: true)
         doHide(view: muteBtn, hidden: true)
         
+        deleteButtonTapTimer()
+        
+        isButtonsDisplayed = !isButtonsDisplayed
+    }
+    
+    func deleteButtonTapTimer()
+    {
         if imageBtnTapTimer != nil
         {
             imageBtnTapTimer?.invalidate()
             imageBtnTapTimer = nil
         }
-        
-        isButtonsDisplayed = !isButtonsDisplayed
     }
     
     // MARK:- Play Audio File
